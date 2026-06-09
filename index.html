@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="sa-Latn">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ब्रह्मसूत्र — तृतीय-चतुर्थाध्यायौ विश्लेषणम् | Brahmasūtra Adhyāyas III & IV — Phonemic, Sandhi, Mātṛkā Nyāsa Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --gold: #b5862a;
+  --gold-lt: #f4eed8;
+  --gold-dk: #7a5a18;
+  --ink: #1a1610;
+  --muted: #5c5240;
+  --faint: #ede5d0;
+  --border: #c9b98a;
+  --accent: #8b2e2e;
+  --accent-lt: #f9eded;
+  --teal: #1a6b5c;
+  --teal-lt: #e0f2ee;
+  --page: #faf6ee;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+.deva { font-family: 'Noto Serif Devanagari', serif; }
+
+/* ─── Header ─── */
+.site-header {
+  text-align: center;
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 3rem;
+}
+.om-symbol { font-size: 2.8rem; color: var(--gold); display: block; margin-bottom: 0.75rem; }
+.site-header h1 {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.site-header .subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+.site-header .scope-note {
+  margin-top: 1.2rem;
+  font-size: 0.92rem;
+  color: var(--gold-dk);
+  letter-spacing: 0.03em;
+}
+
+/* ─── TOC ─── */
+nav.toc {
+  background: var(--gold-lt);
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 3.5rem;
+}
+nav.toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-dk); margin-bottom: 1rem; }
+nav.toc ol { padding-left: 1.2rem; }
+nav.toc li { font-size: 0.95rem; margin-bottom: 0.35rem; }
+nav.toc a { color: var(--accent); text-decoration: none; }
+nav.toc a:hover { text-decoration: underline; }
+nav.toc .sub { margin-left: 1.2rem; list-style: disc; color: var(--muted); }
+
+/* ─── Sections ─── */
+section { margin-bottom: 3.5rem; }
+h2.section-head {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+h3.pada-head {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--gold-dk);
+  margin: 2rem 0 1rem;
+}
+h4.sutra-head {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 1.75rem 0 0.5rem;
+}
+p { margin-bottom: 1rem; }
+
+/* ─── Sūtra display box ─── */
+.sutra-box {
+  background: #fff;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  padding: 0.9rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.sutra-box .deva-line {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.sutra-box .iast-line {
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.sutra-box .meaning {
+  font-size: 0.93rem;
+  color: var(--teal);
+  display: block;
+}
+
+/* ─── Phoneme table ─── */
+.phoneme-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 1.25rem 0;
+}
+.phoneme-table th {
+  background: var(--faint);
+  color: var(--gold-dk);
+  text-align: left;
+  padding: 0.45rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid var(--border);
+}
+.phoneme-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 0.5px solid #e8dfc8;
+  vertical-align: top;
+}
+.phoneme-table tr:last-child td { border-bottom: none; }
+.phoneme-table .deva-cell { font-family: 'Noto Serif Devanagari', serif; font-size: 1.05rem; }
+.phoneme-table .zone-cell { color: var(--accent); font-size: 0.85rem; }
+.phoneme-table .effect-cell { color: var(--teal); font-size: 0.85rem; }
+
+/* ─── Highlighted quote box ─── */
+.insight-box {
+  background: var(--teal-lt);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 4px 4px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.97rem;
+  color: var(--ink);
+}
+.insight-box strong { color: var(--teal); font-weight: 500; }
+
+.note-box {
+  background: var(--accent-lt);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* ─── Master reference table ─── */
+.master-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 1.5rem 0;
+}
+.master-table th {
+  background: var(--ink);
+  color: var(--gold-lt);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+.master-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 0.5px solid #ddd2b8;
+  vertical-align: top;
+}
+.master-table tr:nth-child(even) td { background: #f5f0e4; }
+.master-table .deva-cell { font-family: 'Noto Serif Devanagari', serif; font-size: 1rem; }
+
+/* ─── Pāda divider ─── */
+.pada-divider {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin: 2.5rem 0;
+  letter-spacing: 0.3em;
+}
+
+/* ─── Footer ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  margin-top: 4rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* ─── Inline Sanskrit ─── */
+.sa { font-family: 'Noto Serif Devanagari', serif; font-size: 1.05em; }
+.iast { font-style: italic; color: var(--muted); }
+
+@media (max-width: 640px) {
+  body { font-size: 0.98rem; padding: 0 1rem 3rem; }
+  .site-header h1 { font-size: 1.3rem; }
+  .phoneme-table, .master-table { font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="om-symbol deva">ॐ</span>
+  <h1>ब्रह्मसूत्र — शब्द-सन्धि-समास-मातृका-न्यास विश्लेषणम्</h1>
+  <p class="subtitle">Brahmasūtra · Phonemic, Sandhi, Samāsa &amp; Mātṛkā Nyāsa Analysis</p>
+  <p class="scope-note">तृतीयाध्याय &amp; चतुर्थाध्याय — पूर्णविश्लेषणम् · A Comprehensive Scholarly Study of Sound, Sandhi, and Mātṛkā Resonance<br/>in the Sūtras of Bādarāyaṇa — Adhyāyas III &amp; IV</p>
+</header>
+
+<nav class="toc">
+  <h2>विषयसूची · Table of Contents</h2>
+  <ol>
+    <li><a href="#prolegomena">Prolegomena: The Pivot of the Brahmasūtras — III &amp; IV as Liberation Science</a></li>
+    <li><a href="#adhyaya3-intro">Adhyāya III — Sādhana &amp; Upāsanā: The Phonemic Body of Practice</a>
+      <ul class="sub">
+        <li><a href="#a3p1">§ 3.1 — Karma, Rebirth &amp; the Phonemic Architecture of Saṃsāra</a></li>
+        <li><a href="#a3p2">§ 3.2 — The Dream, the Deep Sleep &amp; the Subtle Body</a></li>
+        <li><a href="#a3p3">§ 3.3 — Sāmānādhikaraṇya: Upaniṣadic Concordance &amp; Compound Resonance</a></li>
+        <li><a href="#a3p4">§ 3.4 — The Qualified Aspirant &amp; the Phonemics of Liberation Preparation</a></li>
+      </ul>
+    </li>
+    <li><a href="#adhyaya4-intro">Adhyāya IV — Phala: Liberation, Departure &amp; the Phonemics of Mokṣa</a>
+      <ul class="sub">
+        <li><a href="#a4p1">§ 4.1 — Upāsanā Refinements: Steadiness, Posture &amp; Accumulated Karma</a></li>
+        <li><a href="#a4p2">§ 4.2 — The Dying Process &amp; the Sound of the Departing Soul</a></li>
+        <li><a href="#a4p3">§ 4.3 — Devayāna: The Bright Path &amp; Phonemics of the Cosmic Journey</a></li>
+        <li><a href="#a4p4">§ 4.4 — Mukti: Liberation, the Liberated State &amp; Non-Return</a></li>
+      </ul>
+    </li>
+    <li><a href="#master-table">Master Reference Table: Adhyāyas III &amp; IV</a></li>
+    <li><a href="#purification">The Integrated Purification Mechanism</a></li>
+    <li><a href="#conclusion">Conclusion: The Sound of Liberation</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="prolegomena">
+<h2 class="section-head">Prolegomena: The Pivot of the Brahmasūtras — III &amp; IV as Liberation Science</h2>
+
+<p>The four adhyāyas of the Brahmasūtras constitute a complete architecture of Vedāntic inquiry: Adhyāya I establishes Brahman as the object of knowledge (<span class="iast">Samanvaya</span>); Adhyāya II demonstrates Brahman's non-contradictability against rival systems (<span class="iast">Avirodha</span>); Adhyāya III turns inward to the <em>means</em> of realizing Brahman — the disciplines of meditation, worship, and conduct (<span class="iast">Sādhana</span>); and Adhyāya IV crowns the entire edifice with the description of liberation's fruit, the path after death, and the final state of the mukta (<span class="iast">Phala</span>).</p>
+
+<p>From the standpoint of <span class="deva">मातृका-न्यास</span> analysis, Adhyāyas III and IV represent a crucial transformation in phonemic function. In Adhyāyas I and II, the phonemes primarily establish, clarify, and defend a philosophical thesis — they perform an <em>epistemic</em> nyāsa. In Adhyāyas III and IV, the phonemes do something more visceral: they <em>enact</em> the very processes they describe. Sūtras about the soul's departure at death vibrate the phonemic zones of the upper prāṇa channels. Sūtras about dreamless sleep resonate in the dissolution frequencies of the auric field. Sūtras about the liberated soul's identity with Brahman deploy the full-body crown-to-root-to-crown phonemic sweeps that are characteristic of the highest nyāsa prescriptions.</p>
+
+<div class="insight-box">
+<strong>Key Principle:</strong> In Adhyāyas III and IV, the sūtra is not merely <em>about</em> the subject — the sūtra phonemically <em>is</em> the subject. The sounds of liberation are liberation's own sound.
+</div>
+
+<p>Bādarāyaṇa's interlocutors in these two adhyāyas are the twin ācāryas Jaimini and Bādari, whose named appearances provide important phonemic counterpoints — the names themselves are mātṛkā-loaded compounds that anchor specific resonance zones in the debate. This analysis tracks not only the primary sūtras but also the ācārya-attributions, treating the entire text as a phonemic field.</p>
+
+<p>The philosophical themes of Adhyāya III — the fate of the soul between lives, the nature of dream-creation, the concordance of Upaniṣadic vidyās, and the qualifications for liberation — generate a vocabulary dense with compound nouns describing psychological and cosmological processes. Adhyāya IV's vocabulary shifts toward kinetic compounds: words describing movement (the soul's journey along the Devayāna), transformation (the dissolution of sheaths), and culmination (the arrival in Brahman). Both vocabularies create phonemic environments of extraordinary richness for the mātṛkā practitioner.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="adhyaya3-intro">
+<h2 class="section-head">Adhyāya III — Sādhana &amp; Upāsanā: The Phonemic Body of Practice</h2>
+
+<p>Adhyāya III opens with a philosophical puzzle that is simultaneously a phonemic wonder: how does the individual soul (<span class="iast">jīva</span>) traverse the space between lives? The sūtras of Pāda 1 address the soul's post-mortem journey (<span class="iast">gatyā</span>), its enveloped transit through elemental states, its rebirth, and the ethical residue that shapes the new life. These topics generate some of the most acoustically complex sūtras in the entire Brahmasūtras.</p>
+
+<h3 class="pada-head" id="a3p1">§ 3.1 — Karma, Rebirth &amp; the Phonemic Architecture of Saṃsāra (Sūtras 3.1.1–3.1.29)</h3>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ तदन्तरप्रतिपत्तौ रंहति सम्परिष्वक्तः प्रश्ननिरूपणाभ्याम् ॐ</span>
+  <span class="iast-line">tadantara-pratipatau raṃhati sampariṣvaktaḥ praśna-nirūpaṇābhyām — 3.1.1</span>
+  <span class="meaning">"In obtaining the intermediate [state], [the soul] moves, enveloped [by subtle elements], as established by question and [its] determination."</span>
+</div>
+
+<h4 class="sutra-head">The Opening Sūtra of Adhyāya III — A Phonemic Analysis of Cosmic Transit</h4>
+
+<p>This is the inaugural sūtra of Adhyāya III and establishes the governing acoustic theme of the entire pāda: movement through intermediate states. The compound <span class="deva">तदन्तरप्रतिपत्तौ</span> (<span class="iast">tadantara-pratipatau</span>) is a six-limbed Tatpuruṣa of formidable phonemic density:</p>
+
+<table class="phoneme-table">
+  <thead>
+    <tr><th>Phoneme Segment</th><th>IAST</th><th>Bodily Zone (Nyāsa)</th><th>Cakra Locus</th><th>Acoustic-Prāṇic Effect</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="deva-cell">त</td><td>ta</td><td class="zone-cell">Dental — lower abdomen</td><td>Svādhiṣṭhāna</td><td class="effect-cell">Grounds the inquiry in the body's karmic residue zone</td></tr>
+    <tr><td class="deva-cell">द</td><td>da</td><td class="zone-cell">Dental voiced — sacral</td><td>Svādhiṣṭhāna</td><td class="effect-cell">Doubled dental activation — emphasis on the lower-body field</td></tr>
+    <tr><td class="deva-cell">अन्तर</td><td>antara</td><td class="zone-cell">Crown + dental + semivowel ra</td><td>Sahasrāra → Svādhiṣṭhāna → channels</td><td class="effect-cell">Full descent: crown-awareness enters the inner space through the channels</td></tr>
+    <tr><td class="deva-cell">प्रति</td><td>prati</td><td class="zone-cell">Labial + semivowel + dental + i</td><td>Mūlādhāra → channels → Svādhiṣṭhāna → Viśuddha</td><td class="effect-cell">Root-energy ascending through channels toward the throat</td></tr>
+    <tr><td class="deva-cell">पत्तौ</td><td>pattau</td><td class="zone-cell">Labial + dental + compound vowel</td><td>Mūlādhāra + Svādhiṣṭhāna + Anāhata (diphthong au)</td><td class="effect-cell">Root-lower-heart: the "falling into" (patti = obtaining) reverberates as a descent into the heart field</td></tr>
+  </tbody>
+</table>
+
+<p>The word <span class="deva">रंहति</span> (<span class="iast">raṃhati</span>, "moves swiftly") is acoustically remarkable: र (semivowel = limb-channels) + the anusvāra ं (bindu = the suspended point between states) + ह (ha = auric dissolution) + ति (dental + i = lower body + throat). The soul's swift movement between lives is thus encoded as: <em>channel activation → suspended bindu-point → dissolution of boundary → lower-body-to-throat transit</em>. The anusvāra here is particularly significant — its appearance in a verb of cosmic motion signals the suspension-between-states that characterizes the intermediate condition (<span class="iast">antarā</span>) itself.</p>
+
+<p><span class="deva">सम्परिष्वक्तः</span> (<span class="iast">sampariṣvaktaḥ</span>, "enveloped/wrapped around") is one of the most structurally complex words in the sūtra. The anusvāra म् (bindu) appears again within सम् — the wrapping of the soul by subtle elements is phonemically prefigured by the nasalized m hovering in the chest cavity. The cerebral ष (ṣa = navel-skin boundary phoneme) and the cluster ष्व (sibilant + labio-dental semivowel = skin-to-limb transition) together create the sensation of wrapping: the navel-skin zone (Maṇipūra-skin interface) extending outward to the limb-channels. The soul "wrapped in subtle elements" is a phonemic as much as philosophical description.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ त्र्यात्मकत्वात्तु भूयस्त्वात् ॐ</span>
+  <span class="iast-line">tryātmakatvāt tu bhūyastvāt — 3.1.2</span>
+  <span class="meaning">"Because [the soul's path is] threefold in nature, on account of [the five-fire teaching's] predominance."</span>
+</div>
+
+<p><span class="deva">त्र्यात्मकत्वात्</span> (<span class="iast">tryātmakatvāt</span>): त्र्य (dental cluster = lower body, tripled) + आत्म (ā-crown + dental-lower + labial-root) + कत्वात् (guttural + dental + semivowel + visarga = throat + lower body + limbs + nostril release). The threefold nature of the soul's path at death is encoded in a phonemic traverse that itself visits three distinct regions: lower body (try-), crown-lower-root axis (ātma-), and throat-limb-nostril (katvāt). Three bodily zones for three cosmic paths.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ प्राणगतेश्च ॐ</span>
+  <span class="iast-line">prāṇagateś ca — 3.1.3</span>
+  <span class="meaning">"And because of [the teaching about] the movement of prāṇa [at death]."</span>
+</div>
+
+<p><span class="deva">प्राणगतेः</span> (<span class="iast">prāṇagateḥ</span>): This short sūtra is acoustically dense. The compound joins प्राण (root + channels + crown + navel, as analyzed in Adhyāya II.4) with गति (<span class="iast">gati</span>, movement): ग (guttural = throat) + ति (dental + i = lower body + Viśuddha throat register). Movement (<span class="iast">gati</span>) is therefore phonemically: throat → lower body → throat — a self-enclosed oscillation, the exact acoustic signature of the prāṇa's oscillatory function between upper and lower poles. The compound प्राणगति is thus a complete prāṇāyāma-metaphysics in six phonemes.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ कृतात्ययेऽनुशयवान् दृष्टस्मृतिभ्याम् ॐ</span>
+  <span class="iast-line">kṛtātyaye'nuśayavān dṛṣṭa-smṛtibhyām — 3.1.8</span>
+  <span class="meaning">"After the exhaustion of [ritual] work, [the soul descends with] residual karma, as established by direct perception and Smṛti."</span>
+</div>
+
+<h4 class="sutra-head">Karma and the Phonemics of Karmic Residue</h4>
+
+<p><span class="deva">अनुशयवान्</span> (<span class="iast">anuśayavān</span>) — "one who has residual karma/subtle impressions" — is one of the philosophically and phonemically most significant compound forms in the entire sūtra-body. अनु (following, prefix: a + nu = crown-mātṛkā + dental nasal = crown → lower body, the downward following of cause by effect) + शय (lying/residue: श = skin/auric sibilant + अ = crown + य = limbs) + वान् (possessive suffix: labial + ā + nasal = root + crown + dental resonance). The compound traces: <em>crown-descends-to-lower-body → residue-lies-at-skin-and-limbs → possessor-grounds-at-root</em>. Karma's residual nature is phonemically enacted: the impressions descend (anu-) from the causal to the material, lodge at the body's surface and channels (śaya), and the karma-bearer is rooted in the material base (vān). This is the phonemic anatomy of transmigration.</p>
+
+<p><span class="deva">दृष्टस्मृतिभ्याम्</span>: The dual instrumental ending <span class="iast">-bhyām</span> (labial + ā + labial nasal = root-pole × 2, a bilateral grounding phoneme) is the Brahmasūtra's characteristic evidence-marker. Its appearance here grounds the metaphysical claim about residual karma in the most physically resonant phoneme pair available — two labials embracing the long ā, creating a stable resonance in the Mūlādhāra field. Evidence itself is "grounded."</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ संयमने त्वनुभूयेतरेषामारोहावरोहौ तद्गतिदर्शनात् ॐ</span>
+  <span class="iast-line">saṃyamane tv anubhūyetareṣām āroha-avarohau tad-gati-darśanāt — 3.1.14</span>
+  <span class="meaning">"In the realm of Yama, however, the others [who have done evil] experience [punishment] — [their] ascent and descent [are described] because [the Śruti shows] that path."</span>
+</div>
+
+<h4 class="sutra-head">Āroha-Avaroha: The Phonemics of Ascent and Descent</h4>
+
+<p>This sūtra is the acoustic jewel of Pāda 1. The compound <span class="deva">आरोहावरोहौ</span> (<span class="iast">āroha-avarohau</span>, ascent-descent) creates an extraordinary phonemic palindrome in its acoustic effect: आ-रो-ह-आ-व-रो-हौ. Tracing it:</p>
+
+<ul style="margin: 0.75rem 0 1rem 1.5rem;">
+  <li>आ (long ā = Brahmarandhra/crown) — the ascent <em>begins</em> at the crown</li>
+  <li>रो (semivowel + diphthong o = limbs + heart-compound) — movement through the heart field</li>
+  <li>ह (ha = auric dissolution, the boundary between levels)</li>
+  <li>आ (long ā = crown again) — arrival at the crown; then the compound vowel āv-</li>
+  <li>व (labio-dental = root-limb interface)</li>
+  <li>रो (semivowel + diphthong = limbs + heart again)</li>
+  <li>हौ (ha + compound vowel au = dissolution + widest diphthong sweep, encompassing Anāhata)</li>
+</ul>
+
+<p>The compound thus phonemically enacts what it describes: the voice ascends to the crown (ā), moves through the heart (ro), crosses the boundary (ha), arrives at the crown (ā), descends through the root-limb interface (va), traverses the heart again (ro), and dissolves into the widest open vowel (hau) — a complete ascent-descent cycle within nine phonemes. Recitation of <span class="deva">आरोहावरोहौ</span> is literally a vocal simulation of cosmic cyclical movement.</p>
+
+<p><span class="deva">संयमने</span> (<span class="iast">saṃyamane</span>, "in the realm of Yama/inner restraint"): The anusvāra in सं (bindu = suspended consciousness) + यमन (ya = limbs + ma = root + na = lower body). The domain of Yama — lord of dharmic reckoning — is phonemically: <em>consciousness-suspended → limbs-controlled → root-grounded → lower-body-centered</em>. Yama's realm is the most fully embodied, grounded domain — where the fruits of karma are fully felt in the lower body's resonance fields.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अपि सप्त ॐ</span>
+  <span class="iast-line">api sapta — 3.1.16</span>
+  <span class="meaning">"[There are] also seven [worlds/planes through which the soul passes]."</span>
+</div>
+
+<p>This two-word sūtra, one of the most terse in the text, is phonemically complete: अपि (first mātṛkā a + labial + i = crown + root + Viśuddha) + सप्त (palatal sibilant + dental + dental = skin + lower body × 2). "Seven" in the mātṛkā system corresponds to the seven cakras — and the word सप्त phonemically spans from skin to lower-body twice, suggesting the downward manifestation of consciousness into seven graded embodied fields. अपि's crown-root-throat sweep followed by सप्त's skin-lower-body double-grounding: a complete top-to-bottom installation in three words.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ रेतः सिग्योगोऽथ ॐ</span>
+  <span class="iast-line">retaḥ-sigyo go'tha — 3.1.28</span>
+  <span class="meaning">"Then [the soul] goes with the union with semen [into the womb]."</span>
+</div>
+
+<h4 class="sutra-head">The Final Re-Embodiment — Phonemics of Birth</h4>
+
+<p>The last sūtras of Pāda 1 (3.1.28–3.1.29) describe the soul's final re-entry into physical embodiment through the union of male and female genetic material. <span class="deva">रेतः</span> (<span class="iast">retaḥ</span>, semen/seed): र (semivowel = prāṇa channels) + ए (compound vowel e = heart field) + त (dental = lower body) + visarga (nostril-release). The seed of rebirth resonates in the heart (life-giving potential), grounds in the lower body (physical material), and releases through the upper prāṇa (visarga = the divine breath that animates). <span class="deva">योनेः शरीरम्</span> (3.1.29, "the body from the womb"): योनि (limbs + lower body + throat) generates शरीर (palatal sibilant + semivowel + long ī + semivowel = skin + channels + deep throat + channels). The body (<span class="iast">śarīra</span>) is phonemically the entity that is simultaneously bounded at its skin (śa) and permeated through its channels (ra-ī-ra) — a perfect acoustic description of embodiment.</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a3p2">§ 3.2 — The Dream, Deep Sleep &amp; the Subtle Body (Sūtras 3.2.1–3.2.42)</h3>
+
+<p>Pāda 2 of Adhyāya III takes up one of the most profound topics in Vedāntic philosophy: the nature of the dream state, the identity of the dreaming self, the nature of deep dreamless sleep, and the relationship between individual consciousness and Brahman-as-witness. The phonemics of this pāda are correspondingly subtle — long vowels dominate, reflecting the expanded, diffuse quality of dream-consciousness.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ सन्ध्ये सृष्टिराह हि ॐ</span>
+  <span class="iast-line">sandhye sṛṣṭir āha hi — 3.2.1</span>
+  <span class="meaning">"[Brahman] creates [in the dream state, which is the] juncture — the scripture declares this."</span>
+</div>
+
+<h4 class="sutra-head">Sandhyā — The Threshold Phoneme</h4>
+
+<p><span class="deva">सन्ध्ये</span> (<span class="iast">sandhye</span>, "in the junction/threshold state [of dream]"): The anusvāra न् (held nasal = suspended between states) + ध्य (dental aspirated + semivowel = lower body + limbs). The dream state is phonemically: <em>consciousness suspended in the nasal field → lower body → limbs</em>. It is neither fully grounded (no labial root-phonemes dominate) nor fully at the crown — the dream is the anusvāra state, hovering between waking's lower-body grounding and sleep's crown dissolution.</p>
+
+<p><span class="deva">सृष्टि</span> (<span class="iast">sṛṣṭi</span>, creation): the vocalic ṛ (short, the rare vowel that bridges Viśuddha and Maṇipūra) + the cerebral ṣ (navel-skin boundary) + ṭi (cerebral + i = navel + throat). Creation is phonemically: <em>navel-Viśuddha interface → navel-skin boundary → navel-to-throat</em>. Creation happens from the navel outward to the surface — a precise description of the Maṇipūra-centered creative impulse that both Tantric and Vedāntic tradition recognize as the locus of creative power (icchā-śakti, kriyā-śakti).</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ मायामात्रं तु कार्त्स्न्येनानभिव्यक्तस्वरूपत्वात् ॐ</span>
+  <span class="iast-line">māyāmātraṃ tu kārtsnyenānabhivyakta-svarūpatvāt — 3.2.3</span>
+  <span class="meaning">"But [the dream objects are] mere māyā, because [they are] the nature of what is not fully manifested [in external completeness]."</span>
+</div>
+
+<h4 class="sutra-head">Māyā — The Most Acoustically Significant Compound in Pāda 2</h4>
+
+<p><span class="deva">मायामात्रं</span> (<span class="iast">māyāmātraṃ</span>): The word māyā is perhaps the most analyzed monosyllabic concept in Vedānta, yet its phonemic analysis has been rarely undertaken. म (labial nasal = Mūlādhāra root) + आ (long ā = Brahmarandhra crown) + य (semivowel = prāṇa channels/limbs) + ā (crown again). The structure is: <em>root → crown → channels → crown</em> — a rising-and-returning motion that never leaves the axis, never establishes in the periphery. This is māyā's precise cosmological character: it appears to move through the channels and establish at the crown, but always returns to its root in Brahman. The doubled ā (long vowels at positions 2 and 4) gives māyā its quality of apparent spaciousness — it seems large (the grand illusion) while being utterly contained within the root-crown axis.</p>
+
+<p>The addition of <span class="deva">मात्रं</span> (<span class="iast">mātraṃ</span>, "mere/only") — which shares māyā's labial root and adds dental + anusvāra — intensifies the rooting: "mere māyā" is phonemically double-grounded at the Mūlādhāra (two labials: m-m) with the anusvāra suspending the word between its ground and the long ā's crown.</p>
+
+<p>The dense compound <span class="deva">अनभिव्यक्तस्वरूपत्वात्</span> (<span class="iast">anabhivyakta-svarūpatvāt</span>) is one of the longest compounds in Pāda 2 and worthy of full analysis:</p>
+
+<table class="phoneme-table">
+  <thead><tr><th>Segment</th><th>IAST</th><th>Zone</th><th>Philosophical Resonance</th></tr></thead>
+  <tbody>
+    <tr><td class="deva-cell">अन</td><td>ana</td><td class="zone-cell">Crown + dental nasal (lower body)</td><td class="effect-cell">Negation descends from crown to lower body — negation is a grounding act</td></tr>
+    <tr><td class="deva-cell">भि</td><td>bhi</td><td class="zone-cell">Labial + i (root + throat)</td><td class="effect-cell">The toward-ness (abhi) connects root to throat — the direction of manifestation</td></tr>
+    <tr><td class="deva-cell">व्यक्त</td><td>vyakta</td><td class="zone-cell">Labio-dental + semivowel + guttural + dental</td><td class="effect-cell">Root-limb interface → channels → throat → lower: the full manifesting sweep</td></tr>
+    <tr><td class="deva-cell">स्व</td><td>sva</td><td class="zone-cell">Palatal sibilant + labio-dental semivowel</td><td class="effect-cell">Skin + root-limb: self = the body's bounded surface connected to its root</td></tr>
+    <tr><td class="deva-cell">रूप</td><td>rūpa</td><td class="zone-cell">Semivowel + long ū + labial</td><td class="effect-cell">Channels + deep Viśuddha + root: form arises from deep inner gathering</td></tr>
+    <tr><td class="deva-cell">त्वात्</td><td>tvāt</td><td class="zone-cell">Dental + semivowel + long ā + dental + visarga</td><td class="effect-cell">Lower body → limbs → crown → lower → nostril: complete causal circuit</td></tr>
+  </tbody>
+</table>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ तदभावो नाडीषु तच्छ्रुतेः आत्मनि च ॐ</span>
+  <span class="iast-line">tad-abhāvo nāḍīṣu tac-chruteḥ ātmani ca — 3.2.7</span>
+  <span class="meaning">"The absence of that [consciousness] is in the nāḍīs [during deep sleep], as the self — as the Śruti [says]."</span>
+</div>
+
+<h4 class="sutra-head">Nāḍī — The Prāṇa Channel as Phoneme</h4>
+
+<p>This is the Brahmasūtra's authoritative sūtra on deep dreamless sleep (<span class="iast">suṣupti</span>): consciousness withdraws into the nāḍīs and ultimately rests in the ātman. The word <span class="deva">नाडीषु</span> (<span class="iast">nāḍīṣu</span>) is phonemically a description of the nāḍī-network itself: न (dental nasal = Svādhiṣṭhāna, where the nāḍī system is rooted) + आ (long ā = the expansive crown-consciousness that pervades them) + ड (cerebral voiced stop = Maṇipūra navel) + ī (long ī = Viśuddha deep throat) + ṣu (cerebral sibilant = navel-skin boundary, locative plural suffix). The locative <span class="deva">नाडीषु</span> thus vibrates the exact zones (sacral, navel, throat, skin-surface) that are identified in yogic anatomy as the principal sites of the nāḍī network.</p>
+
+<p><span class="deva">आत्मनि</span> (<span class="iast">ātmani</span>, "in the self/ātman"): आ (crown) + त्म (dental + labial = lower body + root) + नि (dental nasal + i = lower body + Viśuddha). The locative of ātman vibrates: crown → lower-body-root → lower-Viśuddha. The ātman is "located" by phonemics at the axis junction between the crown and root, with a secondary resonance at the lower Viśuddha — precisely the <span class="iast">hṛdayākāśa</span> (heart-space) zone that tradition identifies as the ātman's primary locus.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ स एव तु कर्मानुस्मृतिशब्दविधिभ्यः ॐ</span>
+  <span class="iast-line">sa eva tu karmānusmṛti-śabda-vidhibhyaḥ — 3.2.9</span>
+  <span class="meaning">"But that very [same soul wakes and acts], on account of [continuity of] karma, memory, scriptural word, and injunction."</span>
+</div>
+
+<p>The four pillars of personal continuity across sleep — karma, memory (<span class="iast">ansmṛti</span>), śabda (scriptural testimony), and vidhi (injunction) — are joined in a single compound. Phonemically: कर्म (guttural + vocalic ṛ + labial nasal = throat + navel-interface + root) + अनुस्मृति (crown + lower body + skin + navel + dental = full-body descending sweep of memory) + शब्द (palatal sibilant + labial + dental = skin + root + lower body) + विधि (labio-dental + dental + i = interface + lower + Viśuddha). Four philosophical continuants, four phonemic sweeps, four distinct resonance patterns — united by the Tatpuruṣa compound's acoustic fusion.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ न स्थानतोऽपि परस्योभयलिङ्गं सर्वत्र हि ॐ</span>
+  <span class="iast-line">na sthānato'pi parasyo'bhaya-liṅgaṃ sarvatra hi — 3.2.11</span>
+  <span class="meaning">"[Brahman] is not defined by location even [though] it has both characteristics [of with-form and formless] — everywhere, indeed."</span>
+</div>
+
+<h4 class="sutra-head">The Ubiquity of Brahman — A Spatial Phonemics</h4>
+
+<p><span class="deva">सर्वत्र</span> (<span class="iast">sarvatra</span>, "everywhere"): The phonemic analysis of this word is a complete spatial map. स (palatal sibilant = skin/surface boundary) + र (semivowel = channels/limbs) + व (labio-dental = root-to-limb interface) + त्र (dental + semivowel ra = lower body + channels). "Everywhere" in phonemic terms: <em>surface-boundary → channels → root-interface → lower-body-channels</em>. The word spans every register of the body's spatial self-knowledge: the outer surface (śa), the internal movement channels (ra), the root-connection (va), and the structured lower-body channels (tra). Brahman's omnipresence is phonemically demonstrated by the word that names it — the voice must move through every zone of the vocal tract to say "everywhere."</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अरूपवदेव हि तत्प्रधानत्वात् ॐ</span>
+  <span class="iast-line">arūpavad eva hi tat-pradhānatvāt — 3.2.14</span>
+  <span class="meaning">"[Brahman is] formless-like, indeed, because that is primary [in the Upaniṣadic teaching]."</span>
+</div>
+
+<p><span class="deva">अरूपवत्</span> (<span class="iast">arūpavat</span>, "formless-like"): The prefix अ (negation, first mātṛkā = Sahasrāra) precedes रूप (form: semivowel + long ū + labial = channels + deep Viśuddha + root). The negation of form places the Sahasrāra crown-phoneme before the full expression of "form" — formlessness is acoustically: <em>crown-first, then channels-throat-root</em>. Brahman's formlessness is not the absence of resonance but the priority of the crown-phoneme over the body-generating phonemes. The crown speaks first; the body follows, but does not define.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ उभयव्यपदेशात्तु अहिकुण्डलवत् ॐ</span>
+  <span class="iast-line">ubhaya-vyapadeśāt tu ahikuṇḍalavat — 3.2.28</span>
+  <span class="meaning">"But because both [form and formless] are indicated, [it is] like a snake and its coil."</span>
+</div>
+
+<h4 class="sutra-head">Ahikuṇḍala — The Serpent and Its Coil as Kuṇḍalinī Phonemics</h4>
+
+<p>The simile <span class="deva">अहिकुण्डलवत्</span> (<span class="iast">ahikuṇḍalavat</span>, "like a serpent and its coil") is one of the most commented similes in the Brahmasūtras, but its phonemic dimension has been overlooked. अहि (serpent): अ (crown) + ह (ha = auric dissolution-field) + इ (short i = throat/Viśuddha). The serpent, phonemically, is: <em>crown-consciousness + dissolution-boundary + throat</em>. This is precisely the Kuṇḍalinī's description in the Tantric tradition: crown-directed energy (ā) that crosses the dissolution-threshold (ha) and manifests as the throat-voice (i). The <span class="iast">ahikuṇḍala</span> simile is not accidental — it is the Brahmasūtra's covert reference to the prāṇa-śakti that is simultaneously Brahman (the straight snake, the uncoiled formlessness) and individual consciousness (the coil, the formed spiral).</p>
+
+<p><span class="deva">कुण्डल</span> (coil): क (guttural = throat) + ुण् (short u + cerebral nasal = Viśuddha + navel) + ड (cerebral voiced = Maṇipūra) + ल (semivowel = limbs). The coil vibrates: throat → Viśuddha-navel → Maṇipūra → limbs. A descending spiral from throat to navel to peripheral body — the form-taking trajectory of consciousness entering manifestation. United with अहि's ascending crown-to-throat movement, the <span class="iast">ahikuṇḍala</span> compound creates the complete helical-ascending-descending motion of the prāṇa-śakti.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ फलमत उपपत्तेः ॐ</span>
+  <span class="iast-line">phalam ata upapatteḥ — 3.2.39</span>
+  <span class="meaning">"[Brahman dispenses] the fruits, from [itself], because of [logical] fitness."</span>
+</div>
+
+<p><span class="deva">फल</span> (<span class="iast">phala</span>, fruit/result): फ (labial aspirated = deep Mūlādhāra resonance, the most voiced of the labials) + ल (semivowel = limbs). The fruit of spiritual practice is phonemically: the deepest root-field (pha) extending to the peripheral channels (la). Fruits are root-energy extending outward — a perfect phonemic icon of how karma ripens from its stored impressions (root zone) into experienced life (peripheral manifestation).</p>
+
+<p><span class="deva">धर्मं जैमिनिः अत एव</span> (3.2.41 — Jaimini's attribution): The ācārya's name जैमिनि is phonemically: ज (palatal = heart) + ऐ (wide diphthong = Anāhata expansiveness) + मि (labial + i = root + throat) + नि (dental nasal + i = lower body + throat). Jaimini's name resonates at the heart (ja), opens it wide (ai), grounds it at the root (mi), and centers it in the lower body's Viśuddha (ni). His philosophical position — that karma (<span class="iast">dharma</span>) is primary — is encoded in a name that grounds the inquiry at the root and lower body levels.</p>
+
+<p>In contrast, <span class="deva">बादरायण</span> (<span class="iast">Bādarāyaṇa</span>): ब (labial = root) + आ (crown) + द (dental = lower body) + र (limbs) + आ (crown) + य (limbs) + ण (cerebral nasal = navel) + a. Bādarāyaṇa's name is a complete Suṣumnā sweep: root → crown → lower → limbs → crown → limbs → navel. His position — that vidyā (knowledge, Brahman-realization) is primary — is encoded in a name that makes the full vertical traverse twice, reflecting his insistence that the knowing subject must experience the complete ascent of consciousness.</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a3p3">§ 3.3 — Sāmānādhikaraṇya: Upaniṣadic Concordance &amp; Compound Resonance (Sūtras 3.3.1–3.3.68)</h3>
+
+<p>Pāda 3 of Adhyāya III is the longest single pāda in the entire Brahmasūtras — 68 sūtras dealing with the question of whether similar-sounding vidyās in different Upaniṣads should be treated as one or many, and how the qualities (<span class="iast">guṇas</span>) of Brahman mentioned in one context should be imported into related contexts. The phonemic theme of this pāda is <em>concordance</em> — the acoustic mirroring between related forms.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ सर्ववेदान्तप्रत्ययं चोदनाद्यविशेषात् ॐ</span>
+  <span class="iast-line">sarva-vedānta-pratyayaṃ codanādy-aviśeṣāt — 3.3.1</span>
+  <span class="meaning">"[The quality of Brahman is] known from all Vedāntas, because the injunctions [in different Upaniṣads] are not essentially different."</span>
+</div>
+
+<h4 class="sutra-head">Sarva-Vedānta — The Universal Phonemic Field</h4>
+
+<p>The opening sūtra of Pāda 3 makes the meta-claim of the entire pāda: the knowledge of Brahman is one across all Upaniṣads. <span class="deva">सर्ववेदान्त</span> (<span class="iast">sarva-vedānta</span>): After सर्व (already analyzed as skin → channels → root-interface → lower-channels), we have वेद (labio-dental + dental + da = interface + lower body + voiced lower body — the doubled dental creates a grounded lower-body resonance) + अन्त (crown + dental nasal + dental = crown → lower body → lower body: endings that are rooted). The "end/culmination" (<span class="iast">anta</span>) of the Veda is thus: crown-knowledge that descends to and terminates in lower-body groundedness. Vedānta's phonemics enact its philosophical program: the knowledge that begins at the crown (brahma-vidyā) must fully ground in the body's lower zones (as lived realization, not mere intellect).</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ आनन्दादयः प्रधानस्य ॐ</span>
+  <span class="iast-line">ānandādayaḥ pradhānasya — 3.3.12</span>
+  <span class="meaning">"The ānanda and other [qualities described in different Upaniṣads belong] to the Primary [Brahman]."</span>
+</div>
+
+<p>The compound <span class="deva">आनन्दादयः</span> (<span class="iast">ānandādayaḥ</span>) joins ānanada (bliss, analyzed in 1.1.12) with ādayaḥ (et cetera): the "et cetera" suffix ā-da-yaḥ = (crown + dental voiced + semivowel + visarga) = crown → lower body → limbs → upper release. The "etc." of Brahman's qualities is phonemically: everything that follows from the crown flows through the lower body and limbs and releases upward. All of Brahman's qualities are phonemically downstream from the crown — the list is acoustically inexhaustible because the crown's resonance field is unlimited.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ भूम्नः क्रतुवज्ज्यायस्त्वं तथा च दर्शयति ॐ</span>
+  <span class="iast-line">bhūmnaḥ kratuvaj jyāyastvaṃ tathā ca darśayati — 3.3.59</span>
+  <span class="meaning">"The greatness of the Infinite [Brahman] is superior, like the [greatness of] a kratu [sacrifice]. And thus the [Śruti] shows."</span>
+</div>
+
+<h4 class="sutra-head">Bhūman — The Infinite Revisited</h4>
+
+<p>The reappearance of <span class="deva">भूमन्</span> (<span class="iast">bhūman</span>, "the Infinite") in Pāda 3 creates a phonemic anchor that echoes the profound Bhūma Vidyā of Chāndogya Upaniṣad 7.24. As analyzed in connection with 1.3.8, भूमन्'s phonemic structure (labial-aspirated root → long ū throat → labial-nasal root → anusvāra suspended) creates a standing wave between Mūlādhāra and Viśuddha. The genitive <span class="deva">भूम्नः</span> (<span class="iast">bhūmnaḥ</span>) with visarga extends this: the Infinite's quality (<span class="iast">jyāyastva</span>, greatness) "exhales" from the Infinite's own standing wave — the visarga releases the held resonance of bhūman into the world of comparative qualities.</p>
+
+<p><span class="deva">क्रतु</span> (<span class="iast">kratu</span>, sacrificial will/intention/ritual): क (guttural = throat/Viśuddha) + र (semivowel = channels) + ट (cerebral stop = Maṇipūra navel) + उ (short u = Viśuddha). Sacrifice is phonemically: throat-intention → channel-distribution → navel-consolidation → throat-release. The ritual (<span class="iast">kratu</span>) is the precise cycle of intentional consciousness (throat) directing prāṇic energy (channels) through the power-center (navel) and releasing it in voice (throat). The mind's intention (kratu in the Vedic sense as "will") is the internal sacrifice whose acoustic form is the circuit of a single breath.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ विद्यैव तु निर्धारणात् ॐ</span>
+  <span class="iast-line">vidyaiva tu nirdhāraṇāt — 3.3.48</span>
+  <span class="meaning">"But vidyā [knowledge/meditation] alone [is the determining factor], because of [Śruti's] determination."</span>
+</div>
+
+<p><span class="deva">विद्या</span> (<span class="iast">vidyā</span>): व (labio-dental = root-limb interface) + इ (short i = Viśuddha throat) + द्य (dental + semivowel = lower body + channels) + ā (long = crown). Knowledge is phonemically: <em>root-interface → throat → lower body → channels → crown</em>. Vidyā begins at the interface of root and limbs (the zone of encounter with the world), moves through the throat (the zone of speaking/naming), descends through the lower body (the zone of embodied experience), extends through the prāṇa channels, and arrives at the crown (the zone of understanding). The journey of knowledge is encoded in five phonemes: from meeting-the-world to arriving-at-Brahman.</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a3p4">§ 3.4 — The Qualified Aspirant &amp; the Phonemics of Liberation Preparation (Sūtras 3.4.1–3.4.51)</h3>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ पुरुषार्थोऽतः शब्दादिति बादरायणः ॐ</span>
+  <span class="iast-line">puruṣārtho'taḥ śabdād iti bādarāyaṇaḥ — 3.4.1</span>
+  <span class="meaning">"[Knowledge of Brahman is] the highest human purpose — for this very reason, says Bādarāyaṇa, because of [Śruti's] word."</span>
+</div>
+
+<h4 class="sutra-head">Puruṣārtha — The Highest Goal's Phonemic Declaration</h4>
+
+<p><span class="deva">पुरुषार्थ</span> (<span class="iast">puruṣārtha</span>, "human purpose/highest goal"): प (labial = root) + ु (short u = Viśuddha/throat) + र (semivowel = channels) + ु (Viśuddha again) + ष (cerebral sibilant = navel-skin boundary) + आर्थ (ā-dental-aspirate = crown + lower body). The word for the "highest human purpose" traverses: root → throat → channels → throat → navel-skin → crown → lower body. This is the complete yogic circuit — the puruṣārtha, by its own phonemic structure, requires the full body's participation. There is no "highest human purpose" that bypasses any zone of the body; the word itself insists on total somatic engagement.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ शमदमाद्युपेतः स्यात्तथाऽपि तु तद्विधेस्तदङ्गतया तेषामवश्यानुष्ठेयत्वात् ॐ</span>
+  <span class="iast-line">śama-damādy-upetaḥ syāt tathā'pi tu tad-vidhes tad-aṅgatayā teṣām avaśyānuṣṭheyatvāt — 3.4.27</span>
+  <span class="meaning">"[The aspirant] should be endowed with śama, dama, and so on — even so, however, because they are prescribed as auxiliary to that [knowledge], they are necessarily to be practiced."</span>
+</div>
+
+<h4 class="sutra-head">Śama and Dama — Inner and Outer Discipline as Complementary Phonemes</h4>
+
+<p><span class="deva">शम</span> (<span class="iast">śama</span>, inner stillness/control of mind): श (palatal sibilant = skin/emotional-boundary zone) + म (labial nasal = root). Inner stillness: the emotional-boundary of the skin drawn inward to the root. The mind's agitations (<span class="iast">vṛttis</span>) are located at the skin-surface zone (śa), and stillness returns them to the root (ma). Śama is the phonemic journey from periphery to center.</p>
+
+<p><span class="deva">दम</span> (<span class="iast">dama</span>, outer discipline/sense control): द (dental voiced = lower abdomen/Svādhiṣṭhāna) + म (labial nasal = root). Outer discipline: the sensory engagement of the lower body (da) controlled and returned to the root (ma). The complementarity of śama (skin → root) and dama (lower body → root) is phonemically perfect: the two disciplines address the body's two peripheral zones — surface and lower — and direct both toward the same center (m, Mūlādhāra). Inner and outer discipline are phonemic mirrors of each other, and their traditional pairing in Vedāntic qualifications (<span class="iast">ṣaṭ-sampat</span>) is acoustically confirmed.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ सर्वापेक्षा च यज्ञादिश्रुतेः अश्ववत् ॐ</span>
+  <span class="iast-line">sarvāpekṣā ca yajñādi-śruteḥ aśvavat — 3.4.26</span>
+  <span class="meaning">"And [knowledge] depends on everything [ritual, ethical practice] — because of [Śruti's] mention of sacrifice etc., like [the case of] a horse."</span>
+</div>
+
+<p><span class="deva">यज्ञ</span> (<span class="iast">yajña</span>, sacrifice): य (semivowel = limbs/prāṇa channels) + ज्ञ (the double-palatal = heart + Ājñā cakra compound). Sacrifice is phonemically: the outward extension of prāṇa through the channels (ya), directed by the heart's discriminating intelligence (jña). In the deepest sense, all sacrifice (<span class="iast">yajña</span>) is the conscious offering of prāṇa (ya) from the heart's wisdom-center (jña). The highest sacrifice is the offering of the ego to Brahman — phonemically: channels (ya) + heart-ājñā wisdom (jña) = the prāṇa offering itself to its own source of knowledge.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ एवं मुक्तिफलानियमस्तदवस्थावधृतेस्तदवस्थावधृतेः ॐ</span>
+  <span class="iast-line">evaṃ mukti-phalāniyamas tad-avasthāvadhṛtes tad-avasthāvadhṛteḥ — 3.4.51</span>
+  <span class="meaning">"In this way, the fruit of liberation has no fixed rule [of timing], because [the Śruti] ascertains that state — [the Śruti] ascertains that state."</span>
+</div>
+
+<h4 class="sutra-head">Mukti — Liberation's Phonemic Signature, and the Final Sūtra's Doubling</h4>
+
+<p><span class="deva">मुक्ति</span> (<span class="iast">mukti</span>, liberation): म (labial nasal = Mūlādhāra root) + ु (short u = Viśuddha/throat) + क (guttural = deeper throat) + ति (dental + i = lower body + Viśuddha). Liberation begins at the root (m), immediately ascends to the throat (u), goes deeper into the throat-core (k), and then releases downward and upward simultaneously (ti = lower-body + throat). The phonemic structure of <span class="iast">mukti</span> is a paradox: liberation (<span class="iast">mukti</span> = releasing/freeing) acoustically moves from root upward but does not stay at the crown — it oscillates between throat and lower body (u-k-ti) in a way that suggests not transcendence-away-from-body but a non-fixation in any zone. Liberation is the freedom to resonate anywhere without attachment to any particular zone's dominance.</p>
+
+<p>The remarkable feature of this, the final sūtra of Adhyāya III, is the deliberate doubling: <span class="deva">तदवस्थावधृतेस्तदवस्थावधृतेः</span> — the phrase is identically repeated. This is unprecedented in the Brahmasūtras and almost certainly intentional. In mātṛkā terms, the repetition creates a <span class="iast">dvitīya-āvṛtti</span> (second iteration) — when a phonemic complex is repeated immediately, the second iteration activates deeper layers of the corresponding bodily zone. The first <span class="iast">tadavasthāvadhṛteḥ</span> vibrates the subtle body; the second reaches the causal body. The doubling is thus a nyāsa prescription: install the awareness of "that state" (<span class="iast">tad-avasthā</span>) first in the subtle field, then confirm it in the causal.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="adhyaya4-intro">
+<h2 class="section-head">Adhyāya IV — Phala: Liberation, Departure &amp; the Phonemics of Mokṣa</h2>
+
+<p>Adhyāya IV is the culminating movement of the Brahmasūtras. Its four pādas describe the fruition of Vedāntic practice: the refinement of meditation and the dissolution of accumulated karma (Pāda 1); the dissolution of the physical and subtle bodies at death (Pāda 2); the journey of the liberated soul along the Devayāna, the bright path of the gods (Pāda 3); and the nature of final liberation — what the freed soul is, what it experiences, whether it returns, and its relationship to Brahman (Pāda 4). The text culminates with the most potent single line of the entire Brahmasūtras: <span class="deva">अनावृत्तिः शब्दादनावृत्तिः शब्दात्</span> — "No return, by the word [of Śruti]; no return, by the word."</p>
+
+<h3 class="pada-head" id="a4p1">§ 4.1 — Upāsanā Refinements: Steadiness, Posture &amp; the Dissolution of Karma (Sūtras 4.1.1–4.1.19)</h3>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ आवृत्तिः असकृदुपदेशात् ॐ</span>
+  <span class="iast-line">āvṛttiḥ asakṛd-upadeśāt — 4.1.1</span>
+  <span class="meaning">"[Upāsanā/meditation should be practiced with] repetition, because of [Śruti's] repeated instruction."</span>
+</div>
+
+<h4 class="sutra-head">Āvṛtti — The Phonemics of Repetition</h4>
+
+<p>The opening of Adhyāya IV with <span class="deva">आवृत्तिः</span> (<span class="iast">āvṛttiḥ</span>, "repetition") is itself a phonemic act of repetition — the entire Adhyāya is about the fruit of sustained practice, and the first word performs that practice in its structure. आ (long ā = crown, the widest-open vowel of the mātṛkā series) + वृ (labio-dental + vocalic ṛ = root-interface + navel-Viśuddha pivot) + त्ति (dental × 2 = lower body doubled) + visarga (upper prāṇa release). Repetition is: crown-openness → root-interface → navel-pivot → double-lower-body grounding → upper release. The cycle of āvṛtti is the cycle of consciousness: opens (ā) → touches its root (vṛ) → grounds (tti) → releases upward (ḥ) → and begins again.</p>
+
+<p><span class="deva">असकृत्</span> (<span class="iast">asakṛt</span>, "not once/repeatedly"): The negation prefix अ (Sahasrāra) before स (skin/auric) + कृत् (guttural + vocalic ṛ + dental = throat + navel-interface + lower body) = "not [completed at the] skin-surface, but [requiring] throat-navel-lower activation." "Not just once" is phonemically: the practice cannot remain at the skin-surface level of initial encounter — it must penetrate to throat, navel, and lower body. Repetition is required precisely because the first encounter (skin-level, sakṛt) is insufficient; deeper zones must be activated.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ आत्मेति तूपगच्छन्ति ग्राहयन्ति च ॐ</span>
+  <span class="iast-line">ātmeti tūpagacchanti grāhayanti ca — 4.1.3</span>
+  <span class="meaning">"But [the teachers] approach [this object of meditation] as the ātman, and they cause [students] to comprehend [it as such]."</span>
+</div>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ आसीनस्सम्भवात् ॐ</span>
+  <span class="iast-line">āsīnas sambhavāt — 4.1.7</span>
+  <span class="meaning">"[The meditator should be] seated, because it is possible [to meditate in that posture]."</span>
+</div>
+
+<h4 class="sutra-head">Āsīna — The Phonemics of the Meditative Seat</h4>
+
+<p><span class="deva">आसीन</span> (<span class="iast">āsīna</span>, seated): The phonemic structure of this instruction is itself a posture prescription. आ (long ā = crown — the crown is the first zone invoked) + सी (palatal sibilant + long ī = skin-surface + deep Viśuddha throat) + न (dental nasal = Svādhiṣṭhāna lower body). Sitting: crown first, then skin-awareness (the settled boundary of the body's surface), then the deep throat's stillness (ī), anchored in the lower body (na). The phonemic sequence of <span class="iast">āsīna</span> is a postural instruction: crown-directed awareness → settle the skin boundary → deepen into the throat → ground in the lower body. This is the acoustic form of the classical meditative seat.</p>
+
+<p><span class="deva">सम्भवात्</span> (<span class="iast">sambhavāt</span>, "because it is possible/arises"): The anusvāra in सम् (suspended bindu = the space of possibility) + भव (becoming: labial + vowel = root-becoming) + āt (causal suffix: crown + dental = understanding from above). Possibility is phonemically the anusvāra — the suspended point between not-yet-arisen and arisen. Meditation's possibility arises in the held breath, the bindu between inhalation and exhalation.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ तदधिगम उत्तरपूर्वाघयोरश्लेषविनाशौ तद्व्यपदेशात् ॐ</span>
+  <span class="iast-line">tad-adhigama uttara-pūrvāghayoḥ aśleṣa-vināśau tad-vyapadeśāt — 4.1.13</span>
+  <span class="meaning">"On the attainment of that [Brahman], [there is] non-attachment and destruction of [post-birth and pre-birth] sins, as indicated [by Śruti]."</span>
+</div>
+
+<h4 class="sutra-head">Karma's Dissolution — The Phonemics of Burning</h4>
+
+<p>This philosophically crucial sūtra — confirming that Brahman-realization dissolves all accumulated karma, future (<span class="iast">uttara</span>) and past (<span class="iast">pūrva</span>) — contains two of the most sonically charged words in the Brahmasūtras.</p>
+
+<p><span class="deva">अश्लेष</span> (<span class="iast">aśleṣa</span>, non-attachment/non-clinging): अ (crown-negation) + श्ले (palatal sibilant + semivowel + compound vowel e = skin + channels + heart diphthong) + ष (cerebral sibilant = navel-skin boundary). "Non-clinging" is phonemically: crown-negation of the process whereby skin clings to channels which cling to the heart-field and the navel-boundary. Karma's clinging is described as a phonemic event spanning skin → channels → heart → navel, and its dissolution (aśleṣa = prefixed with the crown-negation a-) is the reversal of this bonding.</p>
+
+<p><span class="deva">विनाश</span> (<span class="iast">vināśa</span>, destruction): वि (labio-dental + i = root-interface + throat) + ना (dental nasal + ā = lower body + crown) + श (palatal sibilant = skin). Destruction of karma is: root-interface (where karma enters) → throat (where karma is named/accumulated) → lower-body → crown → skin (where karma dissolves at the boundary). The phonemic trajectory of destruction moves from the entry-point (vi-) through the storage sites (nā-) to the release-point (śa). Karma destruction is a full-body process.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अनारब्धकार्ये एव तु पूर्वे तदवधेः ॐ</span>
+  <span class="iast-line">anārabdha-kārye eva tu pūrve tadavadheḥ — 4.1.15</span>
+  <span class="meaning">"But only the [karmas that have] not yet begun to bear fruit [are destroyed at liberation] — the previous ones [prārabdha] [are worked out] up to their limit."</span>
+</div>
+
+<p>This sūtra makes the philosophically precise distinction between karma that has begun to fructify (<span class="iast">prārabdha</span>) and karma not yet in motion (<span class="iast">anārabdha</span>). <span class="deva">अनारब्ध</span> (<span class="iast">anārabdha</span>, not-yet-begun): अ (crown-negation) + ना (lower body + crown) + र (limbs) + ब्ध (labial + dental = root + lower body). The not-yet-begun karma is phonemically inert — it has the structure of negated lower-body/root activation. Its complement, <span class="deva">आरब्ध</span> (ārabbha = already begun), begins with the long ā (crown, fully open) and ends in the lower-body root zone — begun karma has the crown fully engaged and the root already activated.</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a4p2">§ 4.2 — The Dying Process &amp; the Sound of the Departing Soul (Sūtras 4.2.1–4.2.22)</h3>
+
+<p>Pāda 2 of Adhyāya IV is the Brahmasūtra's detailed account of what happens at the moment of death — how the senses withdraw, how the prāṇas dissolve, how the jīva departs from the body. The vocabulary of this pāda is uniquely kinetic, and its phonemics are among the most physiologically direct in the entire text.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ वाङ्ग्मनसि दर्शनाच्छब्दाच्च ॐ</span>
+  <span class="iast-line">vāṅ-manasi darśanāc chabdāc ca — 4.2.1</span>
+  <span class="meaning">"[The organ of] speech [dissolves] into mind — because of [Śruti's] direct statement and the word [of testimony]."</span>
+</div>
+
+<h4 class="sutra-head">Vāk and Manas — The Speech-to-Mind Dissolution Phonemics</h4>
+
+<p><span class="deva">वाक्</span> (<span class="iast">vāk</span>, speech/voice): व (labio-dental = root-limb interface) + ā (long = crown) + क् (guttural = throat-core). Speech is: root-interface → crown (speech originates at the interface of the material and rises to the crown of intention) → throat (where it manifests). The dissolution of vāk into manas (mind) at death is the reversal of this sequence: the throat vibration (k) dissolves, the crown-intention (ā) withdraws, and the root-interface (v) releases — leaving only the mental substratum (<span class="iast">manas</span>).</p>
+
+<p><span class="deva">मनस्</span> (<span class="iast">manas</span>, mind): म (labial nasal = Mūlādhāra root) + न (dental nasal = Svādhiṣṭhāna) + स् (palatal sibilant = skin/auric boundary). Mind is: root → lower body → skin-boundary. Mind is the body's total resonance field from root to surface — it is the entirety of the body's self-awareness. When vāk dissolves into manas, speech dissolves from the upper-zone (throat-crown) into the full-body resonance that is mind. Death's first step is the expansion of awareness from the narrow channel of speech into the wide field of mind.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ तन्मनः प्राण उत्तरात् ॐ</span>
+  <span class="iast-line">tan-manaḥ prāṇa uttarāt — 4.2.3</span>
+  <span class="meaning">"That mind [dissolves] into prāṇa, from the [Śruti] that follows."</span>
+</div>
+
+<p>The sequential dissolution (speech → mind → prāṇa → ātman) described in sūtras 4.2.1–4.2.4 is the Brahmasūtra's account of the yogic <span class="iast">pratyāhāra</span> at death. Phonemically, the sequence of words enacts this dissolution: वाक् (throat-heavy) → मनस् (full-body) → प्राण (root-to-crown complete circuit) — each step is phonemically more complete, more integrated, more total, until the final dissolution into Brahman where all phonemic distinctions are transcended.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अत एव च सर्वाण्यनु ॐ</span>
+  <span class="iast-line">ata eva ca sarvāṇy anu — 4.2.2</span>
+  <span class="meaning">"For this very reason, all [senses dissolve] following [speech into mind]."</span>
+</div>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ तदोकोऽग्रज्वलनं तत्प्रकाशितद्वारो विद्यासामर्थ्यात्तच्छेषगत्यनुस्मृतियोगाच्च हार्दानुगृहीताः शताधिकया ॐ</span>
+  <span class="iast-line">tadoko'grajvalanaṃ tat-prakāśita-dvāro vidyā-sāmarthyāt tac-cheṣa-gaty-anusmṛti-yogāc ca hārdānugṛhītāḥ śatādhikayā — 4.2.17</span>
+  <span class="meaning">"The first flame of that abode [the crown-cakra], whose gateway is illuminated by that [Brahman-light], [the soul is] favored by the indwelling-heart [Brahman], by virtue of vidyā's power, by the yoga of memory of the remaining path — through the [hundred-and-one coronary] passage."</span>
+</div>
+
+<h4 class="sutra-head">The Longest Sūtra of Adhyāya IV — A Complete Death-Yoga Phonemics</h4>
+
+<p>This exceptional sūtra — the longest in Adhyāya IV and one of the most philosophically dense in the entire text — describes the illuminated departure of the meditatively accomplished soul through the Brahmarandhra (the crown aperture) via the suṣumnā nāḍī. Its phonemic structure is correspondingly the most elaborate in the adhyāya.</p>
+
+<p><span class="deva">तदोकः</span> (<span class="iast">tadokaḥ</span>, "that abode [the heart or crown]"): त (dental = lower body) + अदो (ā + dental voiced = crown + lower body) + कः (guttural + visarga = throat + upper release). The abode of liberation is phonemically: lower body → crown-lower oscillation → throat-release. The heart/crown as liberation's locus is a zone that integrates all three lower registers before releasing upward.</p>
+
+<p><span class="deva">अग्रज्वलन</span> (<span class="iast">agrajvalana</span>, "first/forward flame"): अग्र (crown + guttural = Sahasrāra + Viśuddha = the crown-throat axis) + ज्वलन (palatal + labio-dental + semivowel + nasal = heart + root-interface + channels + lower body). The "first flame" is the crown-throat zone (agra) activating the heart-to-lower-body channels (jvalana). The first ignition of liberation happens at the crown-throat junction and immediately illuminates the heart and lower pathways — top-down liberation activation.</p>
+
+<p><span class="deva">विद्यासामर्थ्य</span> (<span class="iast">vidyā-sāmarthya</span>, "power of vidyā/knowledge"): After vidyā (analyzed above as root → throat → lower → channels → crown), <span class="deva">सामर्थ्य</span> (sā-marthy-a = palatal sibilant + ā + labial + cerebral + semivowel = skin + crown + root + navel + channels). Power (<span class="iast">sāmarthya</span>) is: skin-surface-awareness + crown-openness + root-grounding + navel-consolidation + channel-extension. The complete energetic body is the ground of spiritual potency.</p>
+
+<p><span class="deva">हार्द</span> (<span class="iast">hārda</span>, "pertaining to the heart/the indwelling Brahman"): ह (ha = dissolution/auric field) + आर्द (ā + dental voiced = crown + lower body). The heart's grace is: <em>dissolution of boundaries (ha) + the full crown-to-lower axis (ārd)</em>. The grace of the inner Brahman dissolves the boundary between jīva and Brahman and activates the complete vertical axis. <span class="deva">अनुगृहीत</span> (<span class="iast">anugṛhīta</span>, favored/graced): अनु (crown → lower body, downward grace) + गृ (guttural + vocalic ṛ = throat + navel-interface) + हीत (ha + long ī + dental = auric dissolution + deep Viśuddha + lower body). Grace descends from crown, through throat and navel, and dissolves in the deep throat's stillness.</p>
+
+<p><span class="deva">शताधिकया</span> (<span class="iast">śatādhikayā</span>, "by the hundred-and-one [coronary nāḍīs]"): This refers to the 101 nāḍīs in the Kaṭha Upaniṣad tradition, one of which (suṣumnā) leads to immortality. श (palatal sibilant = skin/auric boundary of the whole channel system) + त (dental = lower body, where the nāḍīs are rooted) + ādhika (crown + dental + guttural = crown + lower + throat = the one that exceeds, the suṣumnā that goes above). The "hundred-and-one" is phonemically: the entire nāḍī network (skin-bounded, lower-rooted) plus the one that transcends (ādhika = crown-directed).</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ रश्म्यनुसारी ॐ</span>
+  <span class="iast-line">raśmy-anusārī — 4.2.18</span>
+  <span class="meaning">"[The departing soul] follows the rays [of the sun]."</span>
+</div>
+
+<p><span class="deva">रश्मि</span> (<span class="iast">raśmi</span>, ray of light): र (semivowel = channels/limbs) + श्मि (palatal sibilant + labial + i = skin + root + Viśuddha). A ray of light is phonemically: the prāṇa channel (ra) bounded by the skin-surface of the luminous body (śma) and penetrating to the Viśuddha's depth (i). The sun's rays are the macro-cosmic analog of the body's nāḍīs — both are prāṇic channels radiating from a central luminous source. <span class="deva">अनुसारी</span> (<span class="iast">anusārī</span>, one who follows): अनु (crown → lower body, the downward following) + सा (skin + crown = the ray's surface) + री (semivowel + long ī = channels + deep throat). The departing soul follows by the same prāṇa-channel movement it has always known, but now the channel leads beyond the body.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ योगिनः प्रति स्मर्यते स्मार्ते चैते ॐ</span>
+  <span class="iast-line">yoginaḥ prati smaryate smārte caite — 4.2.22</span>
+  <span class="meaning">"[The sun-path and the moon-path] are remembered [in connection] with the yogin — and these are [described] in Smṛti."</span>
+</div>
+
+<p><span class="deva">योगिन्</span> (<span class="iast">yogin</span>, one who practices yoga): य (semivowel = prāṇa channels/limbs) + ओ (compound vowel = heart-register, the diphthong of Anāhata) + गि (guttural + i = throat + Viśuddha) + न् (dental nasal = lower body). The yogin is phonemically: one in whom the prāṇa channels (ya) are unified at the heart (o), directed from the throat (gi), and grounded in the lower body (n). This is a complete description of the samāhita (integrated) practitioner: channels integrated (ya), heart centered (o), throat directing (gi), body grounded (n).</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a4p3">§ 4.3 — Devayāna: The Bright Path &amp; Phonemics of the Cosmic Journey (Sūtras 4.3.1–4.3.16)</h3>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अर्चिरादिना तत्प्रथितेः ॐ</span>
+  <span class="iast-line">arcirādinā tat-prathiteḥ — 4.3.1</span>
+  <span class="meaning">"By the [path beginning with] flame etc., because that [path] is well-known [in Śruti]."</span>
+</div>
+
+<h4 class="sutra-head">Arcis — The Flame Phoneme and the Devayāna's Opening</h4>
+
+<p><span class="deva">अर्चि</span> (<span class="iast">arci/arcis</span>, flame): अ (crown, first mātṛkā = Sahasrāra, the luminous source) + र (semivowel = channels, the path along which fire travels) + चि (palatal + i = heart + Viśuddha throat). The flame of liberation is: crown-origin → channel-path → heart-manifestation → throat-exit. The Devayāna (the path of the gods) begins with <span class="iast">arcis</span> because the departing consciousness first experiences itself as a flame at the crown, then travels through the prāṇa channels (ra), manifesting as warmth at the heart (ca) before exiting through the throat-gateway (ci) of the Viśuddha. The entire sequence of the Devayāna is encoded in the word that opens it.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ वायुशब्दादविशेषविशेषाभ्याम् ॐ</span>
+  <span class="iast-line">vāyu-śabdād aviśeṣa-viśeṣābhyām — 4.3.2</span>
+  <span class="meaning">"Because of the word 'vāyu' [wind/air], from the [distinction between] non-distinctive and distinctive [modes]."</span>
+</div>
+
+<p><span class="deva">वायु</span> (<span class="iast">vāyu</span>, wind/air): व (labio-dental semivowel = root-to-limb interface) + आ (long ā = crown) + यु (semivowel + u = channels + Viśuddha). Wind/air is phonemically: the root-to-limb interface rising to the crown and moving through channels to the throat. Vāyu is the bīja of the Anāhata/heart cakra (the seed mantra is याँ, yāṃ) — and the word वायु traces the upward movement from the material base (va = earth-interface) through the crown to the channels and throat that characterize the heart's outward-moving prāṇic breath. The Devayāna's second station is vāyu because after the initial flame-ignition, the departing soul enters the prāṇa-field of air — the domain of free movement through channels.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ आतिवाहिकस्तल्लिङ्गात् ॐ</span>
+  <span class="iast-line">ātivāhikas tal-liṅgāt — 4.3.4</span>
+  <span class="meaning">"[The beings on the Devayāna path are] conductors [of the soul], from that indication [in Śruti]."</span>
+</div>
+
+<p><span class="deva">आतिवाहिक</span> (<span class="iast">ātivāhika</span>, "super-carrier/conductor of souls"): आ (crown) + ति (dental + i = lower body + Viśuddha) + वाहि (labio-dental + ā + dental + i = root-interface + crown + lower body + Viśuddha) + क (guttural = throat). The conductors of the Devayāna are beings phonemically constituted as: crown → lower-body-Viśuddha → root-crown-lower-Viśuddha → throat. This is the full-body oscillation between crown and lower zones, with the throat as terminal output — the guide who can traverse the entire vertical axis freely and vocalize (throat) that traversal is the being fit to guide the departing soul.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ कार्यात्यये तदध्यक्षेण सहातः परमभिधानात् ॐ</span>
+  <span class="iast-line">kārya-atyaye tad-adhyakṣeṇa sahātaḥ param abhidhānāt — 4.3.10</span>
+  <span class="meaning">"At the dissolution of the created world, [the liberated soul goes] with the presiding deity of that [world] to the Supreme, because of [Brahman's] supreme designation [in Śruti]."</span>
+</div>
+
+<h4 class="sutra-head">The Great Cosmic Dissolution — Phonemics of Universal Return</h4>
+
+<p><span class="deva">कार्यात्यय</span> (<span class="iast">kāryātyaya</span>, dissolution of the created world): कार्य (guttural + ā + semivowel + semivowel = throat + crown + channels × 2) + अत्यय (ā + dental + semivowel = crown + lower body + channels). The creation's dissolution is phonemically: all the manifest energies (channels × 2 in kārya) return through the crown (ā) and lower body (at-) to their source in the prāṇa channels. The "passing beyond" (<span class="iast">atyaya</span>) of the world-system is a phonemic dissolution of the compound forms back to their simpler phonemic components — the return of manifest language to pure sound.</p>
+
+<p><span class="deva">परम</span> (<span class="iast">parama</span>, the Supreme): प (labial = root/Mūlādhāra) + र (semivowel = channels) + म (labial nasal = root/Mūlādhāra). The Supreme Brahman is phonemically the simplest possible compound: two labials (root/Mūlādhāra) enclosing a semivowel (channels). <em>Brahman is root-to-root through channels</em> — the source and the return are the same (both labials), and between them is the free movement of prāṇa (ra). The "Supreme" designation requires no crown-phoneme (ā), no throat phoneme — it is complete in the body's deepest zone, traversed by its prāṇa, and grounded again. This is the most profound phonemic statement in the Brahmasūtras about Brahman's nature: the Absolute is the root knowing itself through its own channels.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अप्रतीकालम्बनान्नयतीति बादरायणरुभयथा च दोषात् तत्क्रतुश्च ॐ</span>
+  <span class="iast-line">apratīkālambānān nayatīti bādarāyaṇar ubhayathā ca doṣāt tatkratuś ca — 4.3.15</span>
+  <span class="meaning">"Bādarāyaṇa [says the divine conductor] guides only those who have not meditated on a mere symbol — because both [views about the destination] would be defective [otherwise] — and [it is] in accordance with their intention [of realizing Brahman]."</span>
+</div>
+
+<p><span class="deva">तत्क्रतु</span> (<span class="iast">tatkratu</span>, "their intention/kratu [toward Brahman]"): The principle that liberation corresponds to the meditator's intention is one of the great Vedāntic teachings (from Chāndogya 3.14.1: <span class="iast">tad yathā kratur asmil loke...</span>). Phonemically: त (dental = lower body, where intention is stored as karmic seed) + त् (dental again = doubled lower-body grounding) + क्रतु (guttural + semivowel + dental + u = throat + channels + lower body + Viśuddha). The meditator's intention (<span class="iast">kratu</span>) is precisely the phonemic circuit: lower-body seed (tat) → throat-intention → prāṇa-channels → lower-body consolidation → Viśuddha-clarity. The spiritual result mirrors the intentional circuit. The phonemics confirm the philosophy: what you resonate, you become.</p>
+
+<div class="pada-divider">❧ ✦ ❧</div>
+
+<h3 class="pada-head" id="a4p4">§ 4.4 — Mukti: Liberation, the Liberated State &amp; Non-Return (Sūtras 4.4.1–4.4.23)</h3>
+
+<p>The final pāda of the Brahmasūtras addresses the nature of the liberated soul in its fullest detail: its identity with Brahman, the question of whether the freed soul has a body, what powers it possesses, whether multiple souls can coexist in Brahman, and whether liberation is permanent. The pāda culminates in the most celebrated and conclusive of all sūtras — the double declaration of non-return that closes the entire text.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ सम्पद्याविहाय स्वेनशब्दात् ॐ</span>
+  <span class="iast-line">sampadyāvihāya svena-śabdāt — 4.4.1</span>
+  <span class="meaning">"Having attained [Brahman], having abandoned [the body], [the soul becomes Brahman] by its own [nature] — because of [Śruti's] word."</span>
+</div>
+
+<h4 class="sutra-head">Sampadya — The Moment of Liberation's Phonemic Event</h4>
+
+<p><span class="deva">सम्पद्य</span> (<span class="iast">sampadya</span>, "having attained/merged"): The anusvāra in सम् (the bindu of suspended consciousness between states) + प (root/Mūlādhāra) + द्य (dental voiced + semivowel = lower body + channels). The merging into Brahman is: the suspension-point of consciousness (bindu = anusvāra) + root-energy + lower-body-channel extension. Liberation is not a transcendence upward but a full grounding downward from the suspended bindu point into root and channels. This inverts the popular imagination of liberation as "going up" — the phonemics confirm the Advaita teaching: Brahman is not at the top; Brahman is at the root, the base, the most intimate foundation of existence.</p>
+
+<p><span class="deva">अविहाय</span> (<span class="iast">avihāya</span>, "having abandoned/left behind"): अ (crown) + वि (root-interface + i) + ह (auric dissolution) + āya (crown + semivowel = crown + channels, gerundive suffix). Abandoning the body is phonemically: crown-awareness + root-interface dissolution + auric-field release + crown-channel return. The body is left when the crown withdraws from the root-interface (avi-), the auric boundary dissolves (ha), and consciousness returns to its crown-nature through the channels (āya).</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ मुक्तः प्रतिज्ञानात् ॐ</span>
+  <span class="iast-line">muktaḥ pratijñānāt — 4.4.2</span>
+  <span class="meaning">"[The soul is] liberated — on account of [Śruti's] declaration."</span>
+</div>
+
+<p><span class="deva">मुक्तः</span> (<span class="iast">muktaḥ</span>, "liberated one"): म (root) + ु (Viśuddha/throat) + क (throat-core) + तः (dental + visarga = lower body + upper prāṇa release). The liberated one: root-grounded (m) + throat-awakened (u-k) + lower-body + upper release (taḥ). Liberation is not the loss of embodiment but the achievement of simultaneity: root activation and upper release occurring together. The visarga at the end of मुक्तः is the signature phoneme of liberation — the final exhalation that does not lead back to inhalation, the breath released without return.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ अविभागेन दृष्टत्वात् ॐ</span>
+  <span class="iast-line">avibhāgena dṛṣṭatvāt — 4.4.4</span>
+  <span class="meaning">"Because [the liberated soul's identity with Brahman is] seen [by Śruti] as non-differentiated."</span>
+</div>
+
+<p><span class="deva">अविभाग</span> (<span class="iast">avibhāga</span>, non-separation): अ (crown-negation) + वि (root-interface + i) + भा (labial + ā = root + crown) + ग (guttural = throat). The non-separation of jīva and Brahman in liberation is phonemically: crown-negation of the root-interface (avi-) + root-crown axis (bhā) + throat-integration (ga). Liberation dissolves the boundary that the root-interface (vi) established between the individual and the universal; the root-crown axis (bhā) remains, but now it is recognized as Brahman's own axis; and the throat (ga) integrates this recognition into the whole body's awareness.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ चितिमात्रेण तदात्मकत्वादित्यौडुलोमिः ॐ</span>
+  <span class="iast-line">citi-mātraṇa tad-ātmakatvād ity auḍulomiḥ — 4.4.6</span>
+  <span class="meaning">"By pure consciousness alone — because [the liberated soul] has that [Brahman's] nature — says Auḍulomi."</span>
+</div>
+
+<h4 class="sutra-head">Citi — Pure Consciousness as Phonemic Distillation</h4>
+
+<p><span class="deva">चिति</span> (<span class="iast">citi</span>, pure consciousness): च (palatal stop = heart/Anāhata) + इ (short i = Viśuddha/throat) + ति (dental + i = lower body + Viśuddha). Pure consciousness, in this three-phoneme word, is: heart → throat → lower-body-throat. The doubled Viśuddha resonance (i at positions 2 and 4) gives <span class="iast">citi</span> its quality of transparent luminosity — the deep throat registers (Viśuddha's space-element) frame the descent from heart to lower body, keeping both stages in the clear light of awareness. <span class="iast">Citi</span> is consciousness that does not leave the throat's awareness-space even as it enacts the full range from heart to lower body.</p>
+
+<p>Ācārya Auḍulomi's name <span class="deva">औडुलोमि</span>: औ (wide diphthong = widest heart-diphthong, encompassing Anāhata fully) + ड (cerebral = navel/Maṇipūra) + ु (Viśuddha) + ल (semivowel = limbs) + ओ (heart diphthong) + मि (root + Viśuddha). His name spans heart → navel → throat → limbs → heart → root-throat: the complete relational web of the spiritual teacher whose position (consciousness alone) is the most integrated of all. His very name is a nyāsa of the whole subtle body.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ सङ्कल्पादेव च तच्छ्रुतेः ॐ</span>
+  <span class="iast-line">saṅkalpād eva ca tac-chruteḥ — 4.4.8</span>
+  <span class="meaning">"And [the liberated soul acts] by will/intention alone — as that [Śruti] says."</span>
+</div>
+
+<p><span class="deva">सङ्कल्प</span> (<span class="iast">saṅkalpa</span>, divine will/intention): The anusvāra in सं (bindu = the suspended point of pure intention before its manifestation) + क (guttural = throat-entry point of will) + ल (semivowel = channels through which will extends) + प (labial = root where will is grounded). Divine will is: the bindu-suspension of pre-manifest intention, entering through the throat into the prāṇa channels and grounding in the root. The liberated soul's <span class="iast">saṅkalpa</span> becomes immediately effective because the bindu directly activates the root through the channels — there is no karmic resistance in the intervening zones. The anusvāra is the phonemic signature of the saṅkalpa's power: pure suspension-point converting to pure manifestation without delay.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ जगद्व्यापारवर्जम् ॐ</span>
+  <span class="iast-line">jagad-vyāpāra-varjam — 4.4.17</span>
+  <span class="meaning">"[The liberated soul has all the powers of Brahman] except the function of world-creation."</span>
+</div>
+
+<p><span class="deva">जगत्</span> (<span class="iast">jagat</span>, world): ज (palatal = heart) + ग (guttural = throat) + त् (dental = lower body). The world is heart → throat → lower body: the three primary zones of embodied consciousness. <span class="iast">Jagat</span> is not a metaphysical abstraction but a phonemic description of the experiential world that consciousness creates by moving through its own zones.</p>
+
+<p><span class="deva">व्यापार</span> (<span class="iast">vyāpāra</span>, activity/function): व्य (labio-dental + semivowel = root-interface doubled) + ā (crown) + पा (labial + ā = root + crown) + र (semivowel = channels). World-creation activity is: double root-interface → crown → root-crown polarity → channels. Only Brahman can create because only Brahman's activity reaches from the double root-interface all the way to the crown and back through the channels — the liberated soul shares Brahman's crown and channels but does not access the cosmic root-interface required for world-creation.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ स्थितिमाह दर्शयतश्चैवं प्रत्यक्षानुमाने ॐ</span>
+  <span class="iast-line">sthitim āha darśayataś caivam pratyakṣānumāne — 4.4.21</span>
+  <span class="meaning">"[The Śruti] declares [the liberated soul's] abiding [in Brahman] and shows [it] — thus [by] direct perception and inference."</span>
+</div>
+
+<p><span class="deva">स्थिति</span> (<span class="iast">sthiti</span>, standing/abiding): स (skin-surface awareness) + थि (dental aspirated + i = lower-body aspiration + Viśuddha) + ति (dental + i = lower-body + Viśuddha again). Abiding in Brahman is phonemically: skin-surface settled → lower-body aspiration opening the Viśuddha → lower-body → Viśuddha stabilized. The doubled Viśuddha resonance (i in positions 3 and 5) creates the stillness of <span class="iast">sthiti</span> — the sustained deep-throat awareness that does not move. To "abide" is to sustain the Viśuddha-awareness in the lower body without deflection.</p>
+
+<div class="sutra-box">
+  <span class="deva-line deva">ॐ भोगमात्रसाम्यलिङ्गाच्च ॐ</span>
+  <span class="iast-line">bhoga-mātra-sāmya-liṅgāc ca — 4.4.22</span>
+  <span class="meaning">"And [the equality of the liberated soul with Brahman is] in enjoyment alone — because of [Śruti's] indication."</span>
+</div>
+
+<p><span class="deva">भोग</span> (<span class="iast">bhoga</span>, enjoyment/experience): भ (labial aspirated = deep Mūlādhāra, the most rooted of labials) + ओ (heart diphthong = Anāhata field) + ग (guttural = Viśuddha throat). Enjoyment is: deep root-resonance (bha) rising to the heart's openness (o) and being named/recognized at the throat (ga). Experience/enjoyment is the fundamental triadic movement of existence: root → heart → throat. The liberated soul's equality with Brahman is specifically in this enjoyment — which is to say, in the fundamental triadic movement of existence itself. Liberation does not transcend experience; it perfects it.</p>
+
+<!-- ═══════ THE FINAL SUTRA ═══════ -->
+<div class="sutra-box" style="border-left-color: var(--accent); background: var(--accent-lt); margin-top: 2.5rem;">
+  <span class="deva-line deva" style="font-size: 1.5rem; color: var(--accent);">ॐ अनावृत्तिः शब्दादनावृत्तिः शब्दात् ॐ</span>
+  <span class="iast-line" style="font-size: 1rem;">anāvṛttiḥ śabdād anāvṛttiḥ śabdāt — 4.4.23</span>
+  <span class="meaning" style="font-size: 1rem; color: var(--ink);">"No return, by the word [of Śruti]; no return, by the word."</span>
+</div>
+
+<h4 class="sutra-head">The Culminating Sūtra — The Most Analyzed Phonemic Event in the Brahmasūtras</h4>
+
+<p>This, the final sūtra of the entire Brahmasūtras, is the most celebrated, the most commented, and phonemically the most carefully constructed of all 555 sūtras. Its repetition — the sūtra says the same thing twice — is structurally unprecedented in the text and has generated extensive discussion. Śaṃkara reads the repetition as indicating the certainty and irrevocability of liberation. Rāmānuja reads it as addressing two distinct types of non-return (from Brahmaloka, and from Brahman itself). Madhva reads it as the double sealing of liberation by two Upaniṣadic testimonies. All three are right at the phonemic level, but for a different reason.</p>
+
+<p><span class="deva">अनावृत्तिः</span> (<span class="iast">anāvṛttiḥ</span>, "non-return"): Let us trace this in complete phonemic detail:</p>
+
+<table class="phoneme-table">
+  <thead><tr><th>Phoneme</th><th>IAST</th><th>Bodily Zone</th><th>Liberation Significance</th></tr></thead>
+  <tbody>
+    <tr><td class="deva-cell">अ</td><td>a</td><td class="zone-cell">Sahasrāra (crown) — first mātṛkā</td><td class="effect-cell">The negation comes from the highest point — liberation's "no" is the crown's own negation, not a lower faculty's denial</td></tr>
+    <tr><td class="deva-cell">ना</td><td>nā</td><td class="zone-cell">Svādhiṣṭhāna + Brahmarandhra</td><td class="effect-cell">Dental nasal (lower body) + long ā (crown) — lower body and crown activated simultaneously: liberation grounds from crown to base</td></tr>
+    <tr><td class="deva-cell">वृ</td><td>vṛ</td><td class="zone-cell">Root-limb interface + navel-Viśuddha pivot</td><td class="effect-cell">The turning/returning movement (vṛt = to turn) is phonemically held at the root-interface and navel — return would activate these zones, but in liberation they are released</td></tr>
+    <tr><td class="deva-cell">त्ति</td><td>tti</td><td class="zone-cell">Svādhiṣṭhāna (doubled) + Viśuddha</td><td class="effect-cell">Double lower-body + throat: the dental doubling that encodes recurrence is present but negated by the initial a-</td></tr>
+    <tr><td class="deva-cell">ः</td><td>ḥ</td><td class="zone-cell">Brahmarandhra / both nostrils</td><td class="effect-cell">Visarga: the final irreversible upper-prāṇa release — the breath of liberation that does not return</td></tr>
+  </tbody>
+</table>
+
+<p>The word <span class="deva">अनावृत्तिः</span> thus performs its own meaning: the crown (a) negates the lower-body recurrence (vṛtti) that is the structure of saṃsāra, and the word ends with the visarga — the prāṇa released upward through the Brahmarandhra, never to return. The word is a phonemic liberation.</p>
+
+<p><span class="deva">शब्दात्</span> (<span class="iast">śabdāt</span>, "from the word/Śruti"): श (palatal sibilant = skin/auric field — the outermost boundary of the physical body) + ब (labial voiced = root) + द (dental voiced = lower body) + āt (crown + dental = causal ablative: the authority comes from the crown flowing to the lower body). The "word" of Śruti that certifies non-return is itself phonemically complete: it spans from the skin-surface (śa = the outermost limit of individual existence) through the root and lower body (ba-da = the deepest zones of material existence) to the crown-authority (āt). The Śruti's word encompasses everything — from skin to root to crown — and from this total encompassment it certifies liberation's permanence.</p>
+
+<div class="insight-box">
+<strong>The Doubling:</strong> The sūtra is repeated in its entirety — <span class="deva">अनावृत्तिः शब्दादनावृत्तिः शब्दात्</span>. In mātṛkā-nyāsa tradition, repetition of a phonemic complex is not redundancy but intensification — the first utterance vibrates the subtle body, the second vibrates the causal body. By repeating the non-return declaration twice, the text performs a complete nyāsa of liberation: the subtle body is liberated (first utterance), the causal body is liberated (second utterance). After both iterations, the entire field of individual existence — subtle and causal — has been released. The Brahmasūtras end by performing liberation phonemically.
+</div>
+
+<p>The final word of the entire text is <span class="deva">शब्दात्</span> — "from the word." The Brahmasūtras conclude with an act of radical self-reference: they justify themselves, their 555 sūtras, their four adhyāyas, their entire edifice of argument, by pointing to the prior authority of Śruti's sound. But more than this, they acknowledge that the instrument of their entire enterprise — <span class="iast">śabda</span>, word, phoneme — is the very thing that certifies the truth they have been investigating. The Brahmasūtras end at śabda because śabda is where they began: in the acoustic body of Brahman's self-description. The circle is complete. The sound has returned to its source. And that return, the text insists, is no return at all — it is the recognition that the sound never left its source.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="master-table">
+<h2 class="section-head">Master Reference Table: Adhyāyas III &amp; IV — Key Phonemes, Zones, and Purificatory Effects</h2>
+
+<table class="master-table">
+  <thead>
+    <tr>
+      <th>Sūtra</th>
+      <th>Sanskrit Word/Compound</th>
+      <th>Key Phonemes</th>
+      <th>Bodily Zone Activated</th>
+      <th>Mātṛkā Group</th>
+      <th>Purificatory / Yogic Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3.1.1</td>
+      <td class="deva-cell">सम्परिष्वक्तः</td>
+      <td>anusvāra + ṣ + sva</td>
+      <td>Chest (bindu) → navel-skin → root-to-limb</td>
+      <td>Anusvāra + cerebral + semivowel</td>
+      <td>Purifies the prāṇic wrapping that holds karma — untangles subtle-body constrictions</td>
+    </tr>
+    <tr>
+      <td>3.1.1</td>
+      <td class="deva-cell">रंहति</td>
+      <td>ra + anusvāra + ha + ti</td>
+      <td>Channels → bindu suspension → auric dissolution → lower</td>
+      <td>Semivowel + anusvāra + ha-ūṣman</td>
+      <td>Activates the inter-state transition point; purifies the consciousness that moves between lives</td>
+    </tr>
+    <tr>
+      <td>3.1.8</td>
+      <td class="deva-cell">अनुशयवान्</td>
+      <td>a + nu + śa + ya + vān</td>
+      <td>Crown → lower → skin → limbs → root+crown</td>
+      <td>Crown vowel + dental + sibilant + semivowel + labial</td>
+      <td>Full-body karma-residue mapping; recitation purifies stored saṃskāras in each zone</td>
+    </tr>
+    <tr>
+      <td>3.1.14</td>
+      <td class="deva-cell">आरोहावरोहौ</td>
+      <td>ā + ro + ha + ā + va + ro + hau</td>
+      <td>Crown → heart → auric → crown → root-limb → heart → wide-diphthong dissolution</td>
+      <td>Long vowels + diphthongs + ha-ūṣman + semivowels</td>
+      <td>Complete ascent-descent prāṇic cycle; the supreme nāḍī-purification compound — recite for suṣumnā activation</td>
+    </tr>
+    <tr>
+      <td>3.2.1</td>
+      <td class="deva-cell">सन्ध्ये</td>
+      <td>anusvāra + dh + ya</td>
+      <td>Suspended-bindu → lower-body aspiration → limbs</td>
+      <td>Anusvāra + dental aspirate + semivowel</td>
+      <td>Dream-state threshold activation; purifies the vijñānamaya-manomaya interface</td>
+    </tr>
+    <tr>
+      <td>3.2.3</td>
+      <td class="deva-cell">मायामात्रं</td>
+      <td>ma + ā + ya + ā + mātraṃ</td>
+      <td>Root → crown → channels → crown (doubled) + root+crown</td>
+      <td>Labial nasal + long vowels + semivowel + anusvāra</td>
+      <td>Dissolves root-crown polarity illusion; the word for illusion is itself the cure for illusion</td>
+    </tr>
+    <tr>
+      <td>3.2.7</td>
+      <td class="deva-cell">नाडीषु</td>
+      <td>na + ā + ḍa + ī + ṣu</td>
+      <td>Svādhiṣṭhāna → crown → Maṇipūra → deep Viśuddha → navel-skin</td>
+      <td>Dental nasal + long vowel + cerebral + long vowel + cerebral sibilant</td>
+      <td>Activates the nāḍī-network directly; recite for prāṇa-circulation and nāḍī-śodhana</td>
+    </tr>
+    <tr>
+      <td>3.2.9</td>
+      <td class="deva-cell">कर्मानुस्मृति</td>
+      <td>ka+ṛ+ma + a+nu+smṛti</td>
+      <td>Throat+navel+root → crown+lower+skin+navel+lower</td>
+      <td>Guttural + vocalic ṛ + labial + nasal + sibilant + vowel ṛ</td>
+      <td>Purifies the memory-karma nexus; activates the citta-śuddhi process</td>
+    </tr>
+    <tr>
+      <td>3.2.28</td>
+      <td class="deva-cell">अहिकुण्डलवत्</td>
+      <td>a + hi + kuṇḍa + la</td>
+      <td>Crown → auric-dissolution → throat → Viśuddha+navel → Maṇipūra → limbs</td>
+      <td>Crown vowel + ha-ūṣman + guttural + cerebrals + semivowel</td>
+      <td>Kuṇḍalinī prāṇa-śakti activation; the most direct serpent-power reference in the sūtras</td>
+    </tr>
+    <tr>
+      <td>3.3.1</td>
+      <td class="deva-cell">सर्ववेदान्त</td>
+      <td>sarva + veda + anta</td>
+      <td>Skin-channels-root-lower + root-lower-lower + crown-lower-lower</td>
+      <td>Sibilant + semivowels + dentals + crown vowel</td>
+      <td>Universal resonance pattern; reciting this term harmonizes all cakra-fields simultaneously</td>
+    </tr>
+    <tr>
+      <td>3.3.12</td>
+      <td class="deva-cell">आनन्दादयः</td>
+      <td>ā + nanda + ādayaḥ</td>
+      <td>Crown → sacral×2 → crown → lower → limbs → upper-release</td>
+      <td>Long vowels + dual dental nasal + semivowel + visarga</td>
+      <td>Bliss-activation cascade; triple limbic stimulation by nasal resonance</td>
+    </tr>
+    <tr>
+      <td>3.3.59</td>
+      <td class="deva-cell">क्रतु</td>
+      <td>ka + ra + ṭa + u</td>
+      <td>Throat → channels → navel → Viśuddha</td>
+      <td>Guttural + semivowel + cerebral + short vowel</td>
+      <td>Sacrificial-will circuit; activates the navel-to-throat arc of intentional action</td>
+    </tr>
+    <tr>
+      <td>3.4.1</td>
+      <td class="deva-cell">पुरुषार्थ</td>
+      <td>pa+ru+ṣa+ārtha</td>
+      <td>Root → throat → channels → throat → navel-skin → crown → lower</td>
+      <td>Labial + semivowel + cerebral + vowel + dentals</td>
+      <td>Activates the total somatic engagement required for spiritual life — total body nyāsa</td>
+    </tr>
+    <tr>
+      <td>3.4.27</td>
+      <td class="deva-cell">शमदम</td>
+      <td>śa+ma / da+ma</td>
+      <td>Skin→Root / Lower→Root</td>
+      <td>Palatal sibilant + labial / dental + labial</td>
+      <td>Dual peripheral-to-center purification; śama and dama as acoustic complements</td>
+    </tr>
+    <tr>
+      <td>3.4.51</td>
+      <td class="deva-cell">मुक्तिफल (doubled phrase)</td>
+      <td>mukti + phala (×2)</td>
+      <td>Root+throat+lower / root+limbs (twice)</td>
+      <td>Labials + gutturals + semivowels (doubled)</td>
+      <td>Dual-body liberation nyāsa — first utterance: subtle body; second: causal body</td>
+    </tr>
+    <tr>
+      <td>4.1.1</td>
+      <td class="deva-cell">आवृत्तिः</td>
+      <td>ā + vṛ + tti + ḥ</td>
+      <td>Crown → root-interface+navel → lower×2 → upper release</td>
+      <td>Long vowel + labio-dental + vocalic ṛ + dental×2 + visarga</td>
+      <td>Meditation-cycle activation; the prāṇic arc of repetitive practice</td>
+    </tr>
+    <tr>
+      <td>4.1.13</td>
+      <td class="deva-cell">अश्लेषविनाश</td>
+      <td>a+śleṣa + vi+nāśa</td>
+      <td>Crown → skin+channels+heart+navel / root+lower → crown → skin</td>
+      <td>Crown negation + palatal sibilant + semivowel + heart-diphthong + cerebrals</td>
+      <td>Karma-dissolution circuit; activates the complete unbinding of saṃskāras</td>
+    </tr>
+    <tr>
+      <td>4.2.1</td>
+      <td class="deva-cell">वाङ्मनसि</td>
+      <td>vāk + manas</td>
+      <td>Root+crown+throat → root+lower+skin</td>
+      <td>Labio-dental + long vowel + guttural + labial + dental + sibilant</td>
+      <td>Speech-to-mind dissolution pattern; recite for pratyāhāra practice</td>
+    </tr>
+    <tr>
+      <td>4.2.17</td>
+      <td class="deva-cell">हार्दानुगृहीत</td>
+      <td>hā + ṛda + anu + gṛhīta</td>
+      <td>Dissolution+crown → navel-interface → crown+lower → throat+navel+lower+deep-Viśuddha</td>
+      <td>Ha-ūṣman + vocalic ṛ + nasal + guttural + long vowel + dental</td>
+      <td>Heart-grace activation; invocation of the indwelling Brahman's guidance at death</td>
+    </tr>
+    <tr>
+      <td>4.3.1</td>
+      <td class="deva-cell">अर्चि</td>
+      <td>a + ra + ca + i</td>
+      <td>Crown → channels → heart → Viśuddha</td>
+      <td>Crown vowel + semivowel + palatal + short vowel</td>
+      <td>Devayāna opening activation; flame-consciousness from crown through heart to throat</td>
+    </tr>
+    <tr>
+      <td>4.3.10</td>
+      <td class="deva-cell">परम</td>
+      <td>pa + ra + ma</td>
+      <td>Root → channels → root</td>
+      <td>Labial + semivowel + labial nasal</td>
+      <td>Brahman's root-self-recognition; the simplest complete phonemic statement of the Absolute</td>
+    </tr>
+    <tr>
+      <td>4.4.1</td>
+      <td class="deva-cell">सम्पद्य</td>
+      <td>anusvāra + pa + da + ya</td>
+      <td>Bindu-suspension → root → lower-body → channels</td>
+      <td>Anusvāra + labial + dental + semivowel</td>
+      <td>Liberation-attainment activation; the bindu dropping into root and extending through channels</td>
+    </tr>
+    <tr>
+      <td>4.4.6</td>
+      <td class="deva-cell">चिति</td>
+      <td>ca + i + ti + i</td>
+      <td>Heart → Viśuddha → lower body → Viśuddha</td>
+      <td>Palatal + short vowels + dental</td>
+      <td>Pure consciousness installation; double Viśuddha activation creating the transparent-awareness field</td>
+    </tr>
+    <tr>
+      <td>4.4.8</td>
+      <td class="deva-cell">सङ्कल्प</td>
+      <td>anusvāra + ka + la + pa</td>
+      <td>Bindu-suspension → throat → channels → root</td>
+      <td>Anusvāra + guttural + semivowel + labial</td>
+      <td>Divine-will activation; anusvāra-to-root descent as the mechanism of the liberated soul's instantaneous creation</td>
+    </tr>
+    <tr>
+      <td>4.4.22</td>
+      <td class="deva-cell">भोग</td>
+      <td>bha + o + ga</td>
+      <td>Deep-Mūlādhāra → heart diphthong → Viśuddha throat</td>
+      <td>Labial aspirate + heart-diphthong + guttural</td>
+      <td>Liberation-enjoyment activation; the fundamental root-heart-throat arc of pure experience</td>
+    </tr>
+    <tr>
+      <td>4.4.23</td>
+      <td class="deva-cell">अनावृत्तिः शब्दात् (×2)</td>
+      <td>Full 12-phoneme liberation compound, doubled</td>
+      <td>Crown negation of all lower-body-return patterns; visarga final release</td>
+      <td>All groups: crown vowel + nasal + long vowel + labio-dental + vocalic ṛ + dental×2 + visarga + sibilant + labial + dental + causal ablative</td>
+      <td>Ultimate liberation nyāsa — first utterance releases the subtle body, second releases the causal body. The final visarga is the phonemic mokṣa itself.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="purification">
+<h2 class="section-head">The Integrated Purification Mechanism of Adhyāyas III &amp; IV</h2>
+
+<h3 class="pada-head">The Four Movements of Phonemic Liberation</h3>
+
+<p>Adhyāyas I and II purify the <em>knowing faculty</em> — they install correct philosophical understanding in the vijñānamaya kośa by dissolving misconceptions through logical analysis. Adhyāyas III and IV purify something deeper and more intimate: the <em>field of experience itself</em>. Where Adhyāyas I–II ask "what is Brahman?", Adhyāyas III–IV ask "how does consciousness move through its own field?" and "what is it to be free?" The phonemic consequences of this shift are profound.</p>
+
+<p>The vocabulary of Adhyāya III is dominated by compounds describing <em>movement</em> — the soul's transit between lives, the emergence of dream-objects, the withdrawal into deep sleep, the path from one Upaniṣadic vidyā to another. Movement compounds generate phonemic sweeps across multiple zones in rapid succession. When recited with mātṛkā-awareness, these sweeps create what the Śrī Vidyā tradition calls <span class="iast">śarīra-saṃskāra</span> — a refinement of the body's prāṇic channels through the sustained acoustic activation of the movement-patterns encoded in the sūtras.</p>
+
+<p>Adhyāya IV's vocabulary is dominated by compounds describing <em>dissolution</em> — the dissolution of the senses, of karma, of the subtle body, of individuality itself. Dissolution compounds have a characteristic phonemic signature: they tend to begin with aspirated or voiced consonants (which create the sensation of release) and end with visargas or open vowels (the prāṇa completing its release). The recitation of Adhyāya IV creates a cumulative pattern of acoustic release in the body — each sūtra a small dissolution, the sum of all 95 sūtras a complete dissolution-practice that physiologically and subtly enacts the liberation it describes.</p>
+
+<h3 class="pada-head">Nyāsa Prescription for Adhyāyas III &amp; IV</h3>
+
+<p>For practitioners who wish to engage the sūtras of Adhyāyas III and IV as conscious Mātṛkā Nyāsa practice, the following correspondences are offered, based on the phonemic analysis above:</p>
+
+<table class="phoneme-table">
+  <thead>
+    <tr><th>Stage</th><th>Nyāsa Type</th><th>Locus</th><th>Seed Sūtra from III–IV</th><th>Intention</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Opening</td>
+      <td>Suṣumnā Activation</td>
+      <td>Full central channel</td>
+      <td class="deva-cell">आरोहावरोहौ (3.1.14)</td>
+      <td class="effect-cell">Invoke the complete ascent-descent arc; awaken the central channel</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Mūlādhāra Nyāsa</td>
+      <td>Base of spine</td>
+      <td class="deva-cell">परम (4.3.10)</td>
+      <td class="effect-cell">Ground in Brahman's root-identity; pam-ram-mam circuit</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Nāḍī Nyāsa</td>
+      <td>Full prāṇa-network</td>
+      <td class="deva-cell">नाडीषु (3.2.7)</td>
+      <td class="effect-cell">Activate the nāḍī-network in all its zones simultaneously</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Karma Dissolution</td>
+      <td>Lower abdomen / sacral</td>
+      <td class="deva-cell">अनुशयवान् (3.1.8)</td>
+      <td class="effect-cell">Map the body's karma-storage zones and intend their release</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Hṛdaya Nyāsa</td>
+      <td>Heart center</td>
+      <td class="deva-cell">भोग (4.4.22)</td>
+      <td class="effect-cell">Activate the root-heart-throat arc of pure liberated experience</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Viśuddha Nyāsa</td>
+      <td>Throat / Viśuddha</td>
+      <td class="deva-cell">चिति (4.4.6)</td>
+      <td class="effect-cell">Install pure consciousness as the transparent throat-awareness</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Sahasrāra Nyāsa</td>
+      <td>Crown / Brahmarandhra</td>
+      <td class="deva-cell">सम्पद्य (4.4.1)</td>
+      <td class="effect-cell">Invite the bindu-to-root liberation; crown as entry-point of merger</td>
+    </tr>
+    <tr>
+      <td>Culmination</td>
+      <td>Mokṣa Nyāsa (×2)</td>
+      <td>Entire body, then released</td>
+      <td class="deva-cell">अनावृत्तिः शब्दात् (4.4.23, twice)</td>
+      <td class="effect-cell">First: subtle body released. Second: causal body released. Visarga: the self released.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+<p><strong>The Recitation Circuit:</strong> The recitation of the complete Adhyāyas III and IV as a continuous practice — approximately 214 sūtras — constitutes a complete traversal of the phonemic body that mirrors the soul's own journey as described in the text: from embodied entanglement (Pāda 3.1) through the subtlety of dream and sleep (Pāda 3.2) through the integration of all knowledge (Pāda 3.3) through the refinement of the qualified aspirant (Pāda 3.4) through the discipline of meditation (Pāda 4.1) through the liberation of the dying process (Pāda 4.2) through the cosmic journey (Pāda 4.3) to the final state of irreversible freedom (Pāda 4.4). The practitioner who recites the two adhyāyas in a single sitting literally enacts the complete spiritual journey in phonemic form.</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section id="conclusion">
+<h2 class="section-head">Conclusion — The Sound of Liberation</h2>
+
+<p>The analysis of Adhyāyas III and IV reveals something that the analysis of Adhyāyas I and II only hinted at: the Brahmasūtras are not merely a philosophy encoded in language — they are a <em>liberation technology encoded in sound</em>.</p>
+
+<p>Adhyāyas I and II establish the philosophical foundations in a vocabulary that is primarily analytic — the phonemes serve the argument. Adhyāyas III and IV move into a vocabulary that is primarily <em>enactive</em> — the phonemes perform the very processes they describe. When Sūtra 3.1.14 describes the soul's ascent and descent through the cosmic planes, the compound <span class="deva">आरोहावरोहौ</span> acoustically enacts that ascent and descent in the practitioner's vocal tract. When 4.4.23 declares non-return, its doubled visarga enacts the irreversible upper-prāṇa release that it is declaring.</p>
+
+<p>Six findings of this analysis merit final emphasis:</p>
+
+<p><strong>1. The anusvāra as liberation-marker.</strong> The anusvāra (bindu, ं) appears at critical junctures in Adhyāyas III and IV — in <span class="deva">रंहति</span> (cosmic movement), <span class="deva">सम्पद्य</span> (liberation-attainment), <span class="deva">सङ्कल्प</span> (divine will). The anusvāra is the phonemic signature of the threshold-state — the suspended point between two conditions. Liberation is the permanent rest in the anusvāra state: consciousness suspended between all conditions, identified with none.</p>
+
+<p><strong>2. The visarga as mokṣa-phoneme.</strong> The visarga (ḥ, :) terminates the final sūtra — <span class="deva">अनावृत्तिः शब्दात्</span>. In the mātṛkā system, the visarga is the Śakti-visarga — the outward release of consciousness from the bindu point. Every visarga in the Brahmasūtras is a small liberation — a momentary release of the accumulated prāṇa of the sūtra's phonemic body upward through the Brahmarandhra. The text that begins with the inquiry into Brahman (<span class="deva">ब्रह्मजिज्ञासा</span>) ends with the visarga of non-return — the inquiry has become the release.</p>
+
+<p><strong>3. The compound <span class="deva">परम</span> as Brahman's phonemic self-description.</strong> The word <span class="deva">परम</span> (pa-ra-ma: root → channels → root) is the simplest and most complete phonemic description of Brahman available in Sanskrit. The Supreme is the root knowing itself through its own channels. This is not metaphor — it is acoustics. Brahman is the ground of being (Mūlādhāra, labial) reaching through the prāṇa-channels (ra, semivowel) back to the ground of being (Mūlādhāra, labial nasal). All of Vedānta's complexity resolves into this three-phoneme circuit.</p>
+
+<p><strong>4. Liberation's paradox in <span class="deva">मुक्ति</span>.</strong> The phonemic analysis of <span class="deva">मुक्ति</span> (liberation) confirms the Advaita teaching: liberation is not a flight to the crown but a non-fixation in any zone. The word oscillates between root, throat, and lower-body without settling — liberation is the freedom from any zone's dominance. This is precisely <span class="iast">jīvanmukti</span> — living freedom that is fully embodied, fully engaged with all the body's resonance zones, attached to none.</p>
+
+<p><strong>5. The Ācārya-names as nyāsa prescriptions.</strong> Bādarāyaṇa's name traces the complete Suṣumnā twice. Jaimini's name vibrates heart, root, and lower body. Auḍulomi's name spans heart-navel-throat-limbs. The names of the great ācāryas are themselves phonemic mandalas — each name a complete subtle-body map that reflects the philosophical position its bearer holds. The debate between ācāryas in Adhyāyas III–IV is not merely philosophical — it is a polyphony of complementary nyāsa-fields, each ācārya-voice contributing a distinct resonance zone to the total field of liberation-knowledge.</p>
+
+<p><strong>6. The doubling of the final sūtra as the Brahmasūtras' supreme phonemic statement.</strong> No other sūtra is repeated in its entirety. The doubling of <span class="deva">अनावृत्तिः शब्दात्</span> is the text's only instance of full-sūtra repetition, and it is not accident or emphasis alone — it is a nyāsa prescription. First utterance: subtle body liberated. Second utterance: causal body liberated. After both utterances, the entire individual field — subtle and causal — has been phonemically dissolved. The Brahmasūtras do not merely describe liberation's non-return: they perform it.</p>
+
+<div class="insight-box">
+<strong>The Final Paradox:</strong> The Brahmasūtras conclude with <span class="deva">शब्दात्</span> — "from the word." The greatest philosophical text of the Vedānta tradition ends by acknowledging that its authority comes not from philosophical argumentation but from śabda — sound, phoneme, the acoustic body of the Absolute. The text points beyond itself to its own source: the primordial sound from which the sūtras arose, the silence from which that sound emerged, and the non-return that is not the end of sound but sound's recognition of its own eternal nature.
+</div>
+
+<p style="text-align: center; margin-top: 2.5rem; font-family: 'Noto Serif Devanagari', serif; font-size: 1.3rem; color: var(--gold-dk);">❧ ॐ ❧</p>
+<p style="text-align: center; font-family: 'Noto Serif Devanagari', serif; font-size: 1.1rem; color: var(--muted);">ॐ तत्सत् ब्रह्मार्पणमस्तु ॐ</p>
+<p style="text-align: center; font-family: 'Noto Serif Devanagari', serif; font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem;">इति श्री ब्रह्मसूत्र-शब्द-सन्धि-मातृका-न्यास-विश्लेषणं — तृतीय-चतुर्थाध्यायौ — सम्पूर्णम्</p>
+</section>
+
+<footer>
+  <p>Sanskrit phonemic analysis, Mātṛkā Nyāsa correspondences, and Vedāntic commentary integrated from the <em>Tāntraloka</em>, <em>Mālinīvijayottara</em>, <em>Parātriṃśikā</em>, <em>Śrīvidyārṇava</em>, <em>Bhāskarārāya-bhāṣya</em>, and classical phonological traditions of Pāṇini and the Śikṣā literature. Philosophical analysis draws on the commentaries of Śaṃkara, Rāmānuja, Madhva, Bhāskara, and Nimbārka on the Brahmasūtras.</p>
+  <p style="margin-top: 0.75rem;">Compiled as part of the Cultural Musings initiative on Sanskrit Computational Linguistics and Vedic Sciences · Hyderabad</p>
+  <p style="margin-top: 0.75rem; color: var(--gold-dk);">श्री गुरुभ्यो नमः · भारतीरमणमुख्यप्राणान्तर्गत श्रीकृष्णार्पणमस्तु</p>
+</footer>
+
+</body>
+</html>
